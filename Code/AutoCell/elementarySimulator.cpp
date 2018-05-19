@@ -2,14 +2,13 @@
  * Project Untitled
  */
 
-
-#include "ElementarySimulator.h"
+#include "elementarySimulator.h"
 
 /**
  * ElementarySimulator implementation
  */
 
 
-void ElementarySimulator::display() {
+void ElementarySimulator::display () {
 
 }
