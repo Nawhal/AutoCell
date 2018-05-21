@@ -45,7 +45,7 @@ bool GameOfLifeAutomaton::willDie (unsigned int line, unsigned int column, State
     if (!s.getCellValue(line, column)) { // if already dead
         return false;
     } else {
-        int nbNeigbors = s.getNbOfLivingNeighbors(line, column);
+        unsigned int nbNeigbors = s.getNbOfLivingNeighbors(line, column);
         if (nbNeigbors < this->getMinToNotDie() || nbNeigbors > this->getMaxToNotDie()) {
             return true;
         }

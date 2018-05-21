@@ -15,7 +15,7 @@
 
 class Simulator {
     private:
-        Automaton* automaton;
+        const Automaton* automaton;
         unsigned int delayMilliSeconds = 100;
         State currentState;
 
@@ -25,7 +25,7 @@ class Simulator {
          *
          * @param autom
          */
-        Simulator(Automaton* autom, State s) : automaton(autom), currentState(s) { }
+        Simulator(const Automaton* autom, State s) : automaton(autom), currentState(s) { }
 
         /**
          * Update current state to the next one.

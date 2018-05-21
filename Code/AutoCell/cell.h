@@ -18,7 +18,7 @@ private:
 
 public:
     /**
-     * Default Constructor that sets false to the value property.
+     * Default Constructor, it sets the value property to false.
      *
      *
      */
@@ -40,6 +40,6 @@ public:
 
 };
 
-std::ostream& operator<< (std::ostream& o, const Cell& c);
+std::ostream& operator<<(std::ostream& o, const Cell& c);
 
 #endif //_CELL_H
