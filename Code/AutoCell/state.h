@@ -26,46 +26,46 @@ class State {
          * @param col
          * @param lin
          */
-        State(const unsigned int lin, const unsigned int col);
+        State (const unsigned int lin, const unsigned int col);
 
         /**
          * Copy constructor.
          *
          * @param st : the state to copy
          */
-        State(const State& st);
+        State (const State& st);
 
         /**
          * Destructor.
          *
          */
-        ~State();
+        ~State ();
 
         /**
          * Returns number of living neighbors around a cell on line line and column column
          * @param cell surrounded
          * @return the living neighbors number
          */
-        unsigned int getNbOfLivingNeighbors(unsigned int line, unsigned int column) const;
+        unsigned int getNbOfLivingNeighbors (unsigned int line, unsigned int column) const;
 
         /**
          * Returns number of lines in the cell grid
          *
          */
-        unsigned int getNbLine() const { return this->nbLine;}
+        int getNbLine () const { return this->nbLine;}
 
         /**
          * Returns number of columns in the cell grid
          *
          */
-        unsigned int getNbColumn() const { return this->nbColumn;}
+        int getNbColumn () const { return this->nbColumn;}
 
         /**
          * @param line
          * @param column
          * @return true is the coordinates are in cell grid
          */
-        bool isInGrid (unsigned int line, unsigned int column) const { return(line < this->getNbLine() && column < this->getNbColumn());}
+        bool isInGrid (int line, int column) const { return (line<this->getNbLine() && line>=0 && column<this->getNbColumn() && column>=0);}
 
 
         /**
@@ -73,8 +73,8 @@ class State {
          * @param column
          * @return return the value of the cell if in the grid else returns false
          */
-        bool getCellValue(unsigned int line, unsigned int column) const{
-            if (isInGrid(line, column)) {
+        bool getCellValue (int line, int column) const{
+            if (isInGrid(line,column)) {
                 return cells[line][column].getValue();
             } else return false;
         }
@@ -84,9 +84,9 @@ class State {
          * @param column
          * @param newCell
          */
-        void changeCell(unsigned int line, unsigned int column, const Cell newCell) { cells[line][column] = Cell(newCell); }
+        void changeCell (unsigned int line, unsigned int column, const Cell newCell) { cells[line][column] = Cell(newCell); }
 
-        friend std::ostream& operator<<(std::ostream& o, const State& s);
+        friend std::ostream& operator<< (std::ostream& o, const State& s);
 };
 
 
