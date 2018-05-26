@@ -13,6 +13,15 @@
 #include "Cell.h"
 #include <iostream>
 
+class StateException {
+    public:
+        StateException (const std::string& message) : info(message) {}
+        std::string getInfo () const { return info; }
+
+    private:
+        std::string info;
+};
+
 class State {
     private:
         const unsigned int nbLine;
@@ -46,7 +55,7 @@ class State {
          * @param cell surrounded
          * @return the living neighbors number
          */
-        unsigned int getNbOfLivingNeighbors (unsigned int line, unsigned int column) const;
+        unsigned int getNbOfLivingNeighbors (int line, int column) const;
 
         /**
          * Returns number of lines in the cell grid
@@ -84,10 +93,18 @@ class State {
          * @param column
          * @param newCell
          */
-        void changeCell (unsigned int line, unsigned int column, const Cell newCell) { cells[line][column] = Cell(newCell); }
+        void changeCell (unsigned int line, unsigned int column, const Cell newCell) {
+            if(isInGrid(line,column)){
+                cells[line][column]=Cell(newCell);
+            }else{
+                throw StateException("dimensions hors de l'état");
+            }
+        }
 
         friend std::ostream& operator<< (std::ostream& o, const State& s);
 };
+
+
 
 
 

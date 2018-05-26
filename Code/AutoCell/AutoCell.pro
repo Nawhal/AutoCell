@@ -32,7 +32,8 @@ SOURCES += \
     simulator.cpp \
     elementaryAutomaton.cpp \
     elementarySimulator.cpp \
-    gameOfLifeAutomaton.cpp
+    gameOfLifeAutomaton.cpp \
+    dayAndNightAutomaton.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     simulator.h \
     elementaryAutomaton.h \
     elementarySimulator.h \
-    gameOfLifeAutomaton.h
+    gameOfLifeAutomaton.h \
+    dayAndNightAutomaton.h
 
 FORMS += \
         mainwindow.ui

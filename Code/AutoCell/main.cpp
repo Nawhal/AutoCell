@@ -5,7 +5,16 @@
 #include "cell.h"
 #include "automaton.h"
 #include "elementaryAutomaton.h"
+#include "gameOfLifeAutomaton.h"
 using namespace std;
+
+void cellEvol(int line, int column,State& s,GameOfLifeAutomaton& gol){
+    /*cout<<endl<<"Cell : "<<line<<"-"<<column<<endl;
+    cout<<"Value : "<<s.getCellValue(line,column)<<endl;
+    cout<<"Nb neighbs : "<<s.getNbOfLivingNeighbors(line,column)<<endl;
+    cout<<"Will die : "<<gol.willDie(line,column,s)<<endl;
+    cout<<"Will be born : "<<gol.willBeBorn(line,column,s)<<endl;*/
+}
 
 int main (int argc, char *argv[])
 {
@@ -30,19 +39,55 @@ int main (int argc, char *argv[])
 
     cout << "\n TEST ELEMENTARY";
 
-    int nb = 12;
+    /*int nb = 12;
     int cols = 9;
     State* eas = new State(1, cols);
     eas->changeCell(0, 5, Cell(true));
     for (int i = 0; i < nb; ++i) {
         cout << "\nEtape " << i << *eas;
         ea->applyTransition(*eas);
+    }*/
+
+
+    cout << "\n TEST GOL";
+    int nb = 8;
+    int lines = 10;
+    int cols = 10;
+    GameOfLifeAutomaton *gol = new GameOfLifeAutomaton(2,3);
+
+    State* golState = new State(lines, cols);
+    golState->changeCell(0, 0, Cell(true));
+    golState->changeCell(0, 1, Cell(true));
+    golState->changeCell(0, 2, Cell(true));
+    golState->changeCell(1, 1, Cell(true));
+    golState->changeCell(2, 5, Cell(true));
+    golState->changeCell(3, 5, Cell(true));
+    golState->changeCell(3, 4, Cell(true));
+    golState->changeCell(3, 6, Cell(true));
+    golState->changeCell(4, 3, Cell(true));
+    golState->changeCell(4, 4, Cell(true));
+    golState->changeCell(4, 6, Cell(true));
+    golState->changeCell(4, 7, Cell(true));
+    golState->changeCell(5, 4, Cell(true));
+    golState->changeCell(5, 5, Cell(true));
+    golState->changeCell(5, 6, Cell(true));
+    golState->changeCell(6, 5, Cell(true));
+
+    cellEvol(2,5,*golState,*gol);
+    cellEvol(0,0,*golState,*gol);
+    cellEvol(3,5,*golState,*gol);
+    cellEvol(2,6,*golState,*gol);
+    cellEvol(2,4,*golState,*gol);
+    cellEvol(3,6,*golState,*gol);
+
+    for (int i = 0; i < nb; ++i) {
+        cout << "\nEtape " << i << *golState;
+        gol->applyTransition(*golState);
     }
 
     int n;
     cin >> n;
     return 0;
-
 
     /*
     QApplication a(argc, argv);

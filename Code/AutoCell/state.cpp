@@ -32,7 +32,7 @@ State::State (const State& st) : nbColumn(st.nbColumn), nbLine(st.nbLine) {
     }
 }
 
-unsigned int State::getNbOfLivingNeighbors (unsigned int line, unsigned int column) const
+unsigned int State::getNbOfLivingNeighbors (int line, int column) const
 {
     int nbL=0;
     int firstNeighborLine = line-1;

@@ -38,6 +38,13 @@ public:
      */
     bool getValue() const { return value; }
 
+    /**
+     * Setter of the cell value
+     *
+     * @return bool
+     */
+    void setValue(bool nvalue) { this->value=nvalue; }
+
 };
 
 std::ostream& operator<< (std::ostream& o, const Cell& c);

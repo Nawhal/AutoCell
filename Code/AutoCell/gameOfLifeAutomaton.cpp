@@ -1,18 +1,24 @@
 #include "gameOfLifeAutomaton.h"
 
 
+bool GameOfLifeAutomaton::isNotInRange(const State& currentState) const{
+    return (currentState.getNbLine() > GameOfLifeAutomaton::getStateMaxNbLine()
+            || currentState.getNbColumn() > GameOfLifeAutomaton::getStateMaxNbColumn());
+}
+
 void GameOfLifeAutomaton::applyTransition (State& currentState) const
 {
-    if (currentState.getNbLine() > GameOfLifeAutomaton::getStateMaxNbLine()
-            || currentState.getNbColumn() > GameOfLifeAutomaton::getStateMaxNbColumn()) {
+    if(isNotInRange(currentState)){
         throw AutomatonException("Dimension incorrecte");
     }
 
+    State old = State(currentState);
+
     for (unsigned int i = 0; i < currentState.getNbLine(); ++i) {
         for (unsigned int j = 0; j < currentState.getNbColumn(); ++j) {
-            if (currentState.getCellValue(i, j) && willDie(i, j, currentState)) {
+            if (willDie(i, j, old)) {
                 currentState.changeCell(i, j, Cell(false));
-            } else if (!currentState.getCellValue(i, j) && willBeBorn(i, j, currentState)) {
+            } else if (willBeBorn(i, j, old)) {
                 currentState.changeCell(i, j, Cell(true));
             }
         }
