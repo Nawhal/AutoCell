@@ -16,6 +16,7 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+QT += xml
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -33,7 +34,9 @@ SOURCES += \
     elementaryAutomaton.cpp \
     elementarySimulator.cpp \
     gameOfLifeAutomaton.cpp \
-    dayAndNightAutomaton.cpp
+    dayAndNightAutomaton.cpp \
+    xmlautomatondatamanager.cpp \
+    singleton.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +47,9 @@ HEADERS += \
     elementaryAutomaton.h \
     elementarySimulator.h \
     gameOfLifeAutomaton.h \
-    dayAndNightAutomaton.h
+    dayAndNightAutomaton.h \
+    xmlautomatondatamanager.h \
+    singleton.h
 
 FORMS += \
         mainwindow.ui
