@@ -6,6 +6,8 @@
 #include "automaton.h"
 #include "elementaryAutomaton.h"
 #include "gameOfLifeAutomaton.h"
+#include "xmlautomatondatamanager.h"
+
 using namespace std;
 
 void cellEvol(int line, int column,State& s,GameOfLifeAutomaton& gol){
@@ -84,6 +86,32 @@ int main (int argc, char *argv[])
         cout << "\nEtape " << i << *golState;
         gol->applyTransition(*golState);
     }
+
+    XmlAutomatonDataManager& man = XmlAutomatonDataManager::getInstance();
+    State* wState = new State(10,8);
+
+    wState->changeCell(9, 7, Cell(true));
+    wState->changeCell(8, 7, Cell(true));
+    wState->changeCell(5, 3, Cell(true));
+    wState->changeCell(5, 7, Cell(true));
+    wState->changeCell(0, 0, Cell(true));
+    cout << "\nWriting"<< *wState;
+    man.writeState(*wState,"C:/Users/MegaB/Desktop","state.xml");
+
+    State rState = man.readState("C:/Users/MegaB/Desktop","readTest.xml");
+    cout << "\nReading"<< rState;
+
+    //ElementaryAutomaton* eawrite = new ElementaryAutomaton(20);
+    ElementaryAutomaton eaRead = man.readElementaryAutomaton("C:/Users/MegaB/Desktop","eaWriteTest.xml");
+    cout << "\nReading ea"<< eaRead;
+
+    //GameOfLifeAutomaton writeGol(5,9);
+    GameOfLifeAutomaton golRead = man.readGameOfLifeAutomaton("C:/Users/MegaB/Desktop","golWriteTest.xml");
+    cout << "\nReading gol"<< golRead;
+
+    delete golState;
+    delete gol;
+    man.endInstance();
 
     int n;
     cin >> n;

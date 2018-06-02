@@ -3,7 +3,6 @@
 
 #include <Automaton.h>
 
-
 class GameOfLifeAutomaton : public Automaton
 {
 
@@ -19,14 +18,12 @@ class GameOfLifeAutomaton : public Automaton
         static unsigned int getStateMaxNbLine () { return stateMaxNbLine; }
         static unsigned int getStateMaxNbColumn () { return stateMaxNbColumn; }
 
-        unsigned int getMinToNotDie () const { return this->minToNotDie; }
-        unsigned int getMaxToNotDie () const { return this->maxToNotDie; }
+
 
 
     public:
-        GameOfLifeAutomaton (unsigned int minNd, unsigned int maxNd) : minToNotDie (minNd), maxToNotDie (maxNd) {}
+        GameOfLifeAutomaton (unsigned int minNd, unsigned int maxNd) : minToNotDie (minNd), maxToNotDie (maxNd) { if(minNd>maxNd){throw AutomatonException("Minimum value superior than maximum value");}}
         virtual ~GameOfLifeAutomaton () {}
-
 
         bool isNotInRange(const State& currentState) const;
 
@@ -34,6 +31,9 @@ class GameOfLifeAutomaton : public Automaton
         virtual void applyTransition (State& currentState) const;
         virtual bool willBeBorn (unsigned int line, unsigned int column,State& s) const;
         virtual bool willDie (unsigned int line, unsigned int column,State& s) const;
+
+        unsigned int getMinToNotDie () const { return this->minToNotDie; }
+        unsigned int getMaxToNotDie () const { return this->maxToNotDie; }
 
 
     protected:

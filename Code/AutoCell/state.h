@@ -101,6 +101,39 @@ class State {
             }
         }
 
+        class Iterator{
+            friend class State;
+
+            const State* state;
+            unsigned int currentLine;
+            unsigned int currentColumn;
+
+
+            Iterator(const State* s,unsigned int l,unsigned c):state(s),currentLine(l),currentColumn(c){}
+
+        public:
+            Iterator():state(0),currentLine(0),currentColumn(0){}
+            const bool operator*() const { return state->getCellValue(currentLine,currentColumn); }
+
+            unsigned int getCurrentLine(){return this->currentLine;}
+            unsigned int getCurrentColumn(){return this->currentColumn;}
+
+            Iterator& operator++() {
+                currentColumn++;
+                if(currentColumn==state->getNbColumn()){
+                    currentColumn=0;
+                    currentLine++;
+                }
+                return *this;
+            }
+            bool operator!=(Iterator it) const { return currentLine!=it.getCurrentLine() || currentColumn!=it.getCurrentColumn(); }
+
+        };
+
+        Iterator begin() const { return Iterator(this,0,0); }
+        //column gets restarted when at tab[size] not line
+        Iterator end() const { return Iterator(this,nbLine,nbColumn-1); }
+
         friend std::ostream& operator<< (std::ostream& o, const State& s);
 };
 
