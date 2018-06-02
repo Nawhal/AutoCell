@@ -1,0 +1,3 @@
+<ElementaryAutomaton>
+ <SurvivalNeighborhood min="5" max="9"/>
+</ElementaryAutomaton>

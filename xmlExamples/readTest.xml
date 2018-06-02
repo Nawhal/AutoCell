@@ -1,0 +1,10 @@
+<State>
+ <Size nbLine="10" nbColumn="8"/>
+ <LivingCells>
+  <Alive column="0" line="0"/>
+  <Alive column="3" line="5"/>
+  <Alive column="7" line="5"/>
+  <Alive column="7" line="8"/>
+  <Alive column="7" line="9"/>
+ </LivingCells>
+</State>
