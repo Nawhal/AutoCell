@@ -13,7 +13,7 @@ class ElementaryAutomaton : public Automaton
 
     private:
         static const unsigned int stateMaxNbLine = 1;
-        static const unsigned int stateMaxNbColumn = 10;
+        static const unsigned int stateMaxNbColumn = 1000;
         static const unsigned int stateWorkingLine = 0;
         static const unsigned int lastRuleIndex = 7;
 

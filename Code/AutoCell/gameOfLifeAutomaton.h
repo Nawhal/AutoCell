@@ -7,8 +7,8 @@ class GameOfLifeAutomaton : public Automaton
 {
 
     private:
-        static const short unsigned int stateMaxNbLine = 10;
-        static const short unsigned int stateMaxNbColumn = 10;
+        static const short unsigned int stateMaxNbLine = 1000;
+        static const short unsigned int stateMaxNbColumn = 1000;
         static const unsigned int nbToBeBorn = 3;
 
         unsigned int minToNotDie;
