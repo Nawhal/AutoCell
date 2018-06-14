@@ -7,10 +7,13 @@
 #include "state.h"
 
 /**
- * State implementation
+ * State implementation.
  */
 
-
+/**
+ * State constructor implementation.
+ *
+ */
 State::State (const unsigned int lin, const unsigned int col) : nbColumn(col), nbLine(lin) {
     cells = new Cell*[nbLine];
     for (unsigned int i = 0; i < nbLine; ++i) {
@@ -18,6 +21,10 @@ State::State (const unsigned int lin, const unsigned int col) : nbColumn(col), n
     }
 }
 
+/**
+ * State copy constructor implementation.
+ *
+ */
 State::State (const State& st) : nbColumn(st.nbColumn), nbLine(st.nbLine) {
     //create same size state
     cells = new Cell*[st.nbLine];
@@ -32,6 +39,10 @@ State::State (const State& st) : nbColumn(st.nbColumn), nbLine(st.nbLine) {
     }
 }
 
+/**
+ * getNbOfLivingNeighbors method implementation.
+ *
+ */
 unsigned int State::getNbOfLivingNeighbors (int line, int column) const
 {
     int nbL=0;
@@ -51,7 +62,10 @@ unsigned int State::getNbOfLivingNeighbors (int line, int column) const
     return nbL;
 }
 
-
+/**
+ * State destructor implementation.
+ *
+ */
 State::~State () {
     for (unsigned int i = 0; i < nbLine; ++i) {
         delete [] cells[i];
@@ -59,6 +73,10 @@ State::~State () {
     delete[] cells;
 }
 
+/**
+ * Assignment operator overload implementation.
+ *
+ */
 std::ostream& operator<< (std::ostream& o, const State& s) {
     o << "\nState :\n";
     for(int i = 0; i < s.getNbLine(); ++i) {

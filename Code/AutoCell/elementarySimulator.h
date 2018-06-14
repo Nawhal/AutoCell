@@ -1,5 +1,9 @@
 /**
- * Project Untitled
+ * AutoCell
+ * @file elementarySimulator.h
+ * Class responsible for the simulation methods for the elementary automaton.
+ *
+ * The Simulator class implements the methods to simulate and display the elementary automaton.
  */
 
 
@@ -8,13 +12,19 @@
 
 #include "simulator.h"
 
-
+/**
+ * @brief The ElementarySimulator class holds everything necessary to simulate an elementary automaton.
+ */
 class ElementarySimulator: public Simulator {
-    public:
-        void display();
-
     private:
         State* states;
+
+    public:
+        /**
+         * Display the state at the interface.
+         *
+         */
+        void display();
 };
 
 #endif //_ELEMENTARYSIMULATOR_H

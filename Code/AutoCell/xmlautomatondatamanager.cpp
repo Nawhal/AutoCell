@@ -1,7 +1,21 @@
+/**
+ * AutoCell
+ * @file xmlautomatondatamanager.cpp
+ */
+
+
 #include "xmlautomatondatamanager.h"
+
+/**
+ * XmlAutomatonDataManager implementation.
+ */
 
 XmlAutomatonDataManager* XmlAutomatonDataManager::instance = nullptr;
 
+/**
+ * getInstance method implementation.
+ *
+ */
 XmlAutomatonDataManager& XmlAutomatonDataManager::getInstance(){
     if(XmlAutomatonDataManager::instance==nullptr){
         XmlAutomatonDataManager::instance = new XmlAutomatonDataManager();
@@ -9,6 +23,10 @@ XmlAutomatonDataManager& XmlAutomatonDataManager::getInstance(){
     return *(XmlAutomatonDataManager::instance);
 }
 
+/**
+ * endInstance method implementation.
+ *
+ */
 void XmlAutomatonDataManager::endInstance(){
     if(nullptr!=XmlAutomatonDataManager::instance){
         delete XmlAutomatonDataManager::instance;
@@ -16,6 +34,10 @@ void XmlAutomatonDataManager::endInstance(){
     }
 }
 
+/**
+ * writeState method implementation.
+ *
+ */
 void XmlAutomatonDataManager::writeState(State& s,QString path,QString filename){
     // Creates a document to write XML
     QDomDocument document;
@@ -50,6 +72,10 @@ void XmlAutomatonDataManager::writeState(State& s,QString path,QString filename)
     writeDocumentInFile(path,filename,document);
 }
 
+/**
+ * readState method implementation.
+ *
+ */
 State XmlAutomatonDataManager::readState(QString path,QString filename){
     // opens the document into document
     QDomDocument document;
@@ -85,6 +111,10 @@ State XmlAutomatonDataManager::readState(QString path,QString filename){
 
 }
 
+/**
+ * writeElementaryAutomaton method implementation.
+ *
+ */
 void XmlAutomatonDataManager::writeElementaryAutomaton(ElementaryAutomaton& e,QString path,QString filename){
     // Creates a document to write XML
     QDomDocument document;
@@ -106,6 +136,10 @@ void XmlAutomatonDataManager::writeElementaryAutomaton(ElementaryAutomaton& e,QS
 
 }
 
+/**
+ * readElementaryAutomaton method implementation.
+ *
+ */
 ElementaryAutomaton XmlAutomatonDataManager::readElementaryAutomaton(QString path,QString filename){
     // opens the document into document
     QDomDocument document;
@@ -119,8 +153,10 @@ ElementaryAutomaton XmlAutomatonDataManager::readElementaryAutomaton(QString pat
     return ElementaryAutomaton(rule);
 }
 
-
-
+/**
+ * writeGameOfLifeAutomaton method implementation.
+ *
+ */
 void XmlAutomatonDataManager::writeGameOfLifeAutomaton(GameOfLifeAutomaton& g,QString path,QString filename){
     // Creates a document to write XML
     QDomDocument document;
@@ -143,6 +179,10 @@ void XmlAutomatonDataManager::writeGameOfLifeAutomaton(GameOfLifeAutomaton& g,QS
 
 }
 
+/**
+ * readGameOfLifeAutomaton method implementation.
+ *
+ */
 GameOfLifeAutomaton XmlAutomatonDataManager::readGameOfLifeAutomaton(QString path,QString filename){
     // opens the document into document
     QDomDocument document;
@@ -157,6 +197,10 @@ GameOfLifeAutomaton XmlAutomatonDataManager::readGameOfLifeAutomaton(QString pat
     return GameOfLifeAutomaton(minNeigbors,maxNeigbors);
 }
 
+/**
+ * writeDocumentInFile method implementation.
+ *
+ */
 void XmlAutomatonDataManager::writeDocumentInFile(QString path,QString filename,QDomDocument& document){
     QString fullName = path+"/"+filename;
     QFile file(fullName);
@@ -173,6 +217,10 @@ void XmlAutomatonDataManager::writeDocumentInFile(QString path,QString filename,
     }
 }
 
+/**
+ * openFileInDocument method implementation.
+ *
+ */
 void XmlAutomatonDataManager::openFileInDocument(QString path,QString filename,QDomDocument& document){
     QString fullName = path+"/"+filename;;
 

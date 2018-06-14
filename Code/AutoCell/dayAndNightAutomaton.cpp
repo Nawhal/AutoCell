@@ -1,7 +1,21 @@
+/**
+ * AutoCell
+ * @file dayAndNightAutomaton.cpp
+ */
+
+
 #include "dayAndNightAutomaton.h"
 
 const int DayAndNightAutomaton::nbToBeBornTab[] = {3,6,7,8};
 
+/**
+ * DayAndNightAutomaton implementation.
+ */
+
+/**
+ * willBeBorn method implementation.
+ *
+ */
 bool DayAndNightAutomaton::willBeBorn (unsigned int line, unsigned int column,State& s) const {
     if (s.getCellValue(line, column)) { // if already living
         return false;
@@ -17,6 +31,10 @@ bool DayAndNightAutomaton::willBeBorn (unsigned int line, unsigned int column,St
     }
 }
 
+/**
+ * willDie method implementation.
+ *
+ */
 bool DayAndNightAutomaton::willDie (unsigned int line, unsigned int column,State& s) const {
     return this->gol34.willDie(line,column,s) && GameOfLifeAutomaton::willDie(line,column,s);
 }

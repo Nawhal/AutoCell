@@ -1,4 +1,14 @@
+/**
+ * AutoCell
+ * @file automaton.cpp
+ */
+
+
 #include "automaton.h"
+
+/**
+ * Automaton implementation.
+ */
 
 /**
 * Destructor is pure virtual, but called in derived class

@@ -1,15 +1,37 @@
+/**
+ * AutoCell
+ * @file elementaryAutomaton.cpp
+ */
+
+
 #include "elementaryAutomaton.h"
 
+/**
+ * Elementary Automaton implementation
+ */
+
+/**
+ * Elementary Automaton constructor implementation.
+ *
+ */
 ElementaryAutomaton::ElementaryAutomaton (unsigned int ruleN) : ruleNumber(ruleN)
 {
     setRule(ruleN);
 }
 
+/**
+ * Elementary Automaton copy constructor implementation.
+ *
+ */
 ElementaryAutomaton::ElementaryAutomaton (const ElementaryAutomaton& e)
 {
     setRule(e.getRuleNumber());
 }
 
+/**
+ * setRule method implementation.
+ *
+ */
 void ElementaryAutomaton::setRule (int ruleN) {
     // 255 est le max représentable sur 8 bits, et 8 cas seulements peuvent exister
     // car une cellule à 2 états et 2 voisins au plus, d'ou 2^3 configs possibles
@@ -31,7 +53,10 @@ void ElementaryAutomaton::setRule (int ruleN) {
     }
 }
 
-
+/**
+ * applyTransition method implementation.
+ *
+ */
 void ElementaryAutomaton::applyTransition(State& currentState) const
 {
     if (currentState.getNbLine() > ElementaryAutomaton::getStateMaxNbLine()
@@ -49,6 +74,10 @@ void ElementaryAutomaton::applyTransition(State& currentState) const
 
 }
 
+/**
+ * lifeExpectancy method implementation.
+ *
+ */
 unsigned int ElementaryAutomaton::lifeExpectancy(bool left,bool mid,bool right)
 {
     unsigned int indexRes = 0;
@@ -62,9 +91,13 @@ unsigned int ElementaryAutomaton::lifeExpectancy(bool left,bool mid,bool right)
     if (left) {
         indexRes += E22;
     }
-    return indexRes; // TODO
+    return indexRes;
 }
 
+/**
+ * print method implementation.
+ *
+ */
 void ElementaryAutomaton::print (std::ostream& os) const
 {
     os << "Elementary automaton :\n";

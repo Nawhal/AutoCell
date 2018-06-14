@@ -12,6 +12,9 @@
 
 #include <iostream>
 
+/**
+ * @brief The Cell class holds a value.
+ */
 class Cell {
 private:
     bool value;
@@ -19,7 +22,6 @@ private:
 public:
     /**
      * Default Constructor that sets false to the value property.
-     *
      *
      */
    Cell() : value(false) { }
@@ -47,6 +49,13 @@ public:
 
 };
 
+/**
+ * Assignment operator overload.
+ *
+ * @param o The out stream to write to.
+ * @param s The cell to write.
+ * @return The out stream with the cell written to.
+ */
 std::ostream& operator<< (std::ostream& o, const Cell& c);
 
 #endif //_CELL_H

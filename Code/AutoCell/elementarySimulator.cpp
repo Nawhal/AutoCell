@@ -5,10 +5,13 @@
 #include "elementarySimulator.h"
 
 /**
- * ElementarySimulator implementation
+ * ElementarySimulator implementation.
  */
 
-
+/**
+ * display method implementation.
+ *
+ */
 void ElementarySimulator::display () {
 
 }

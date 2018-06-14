@@ -1,5 +1,5 @@
 <State>
- <Size nbLine="10" nbColumn="8"/>
+ <Size nbColumn="8" nbLine="10"/>
  <LivingCells>
   <Alive line="0" column="0"/>
   <Alive line="5" column="3"/>
