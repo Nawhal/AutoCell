@@ -12,6 +12,9 @@
 
 #include "state.h"
 #include "automaton.h"
+#include <iostream>
+#include <QTimer>
+#include "QObject"
 
 #define STOPPED 0
 #define RUNNING 1
@@ -21,35 +24,24 @@
 /**
  * @brief The Simulator class holds everything necessary to simulate an automaton.
  */
-class Simulator {
+class Simulator: public QObject {
+    Q_OBJECT
     private:
         Automaton* automaton;
         unsigned int delayMilliSeconds = 100;
         State currentState;
         int simState = STOPPED;
 
-        /**
-         * Method that produces a delay on the running of the program.
-         *
-         * @param millisecondsToWait The time in milliseconds to wait.
-         */
-        void delay( int millisecondsToWait ) {
-            /*QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
-
-            while( QTime::currentTime() < dieTime )
-                QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );*/
-
-            QThread::msleep(millisecondsToWait);
-        }
-
     public:
+        QTimer *timer;
+
         /**
          * Constructor that receives a pointer to the automaton and the state to simulate.
          *
          * @param autom The automaton to simulate.
          * @param s The initial state to simulate.
          */
-        Simulator(Automaton* autom, State s) : automaton(autom), currentState(s) { }
+        Simulator(QObject* parent, Automaton* autom, State s);
 
         /**
          * Update current state to the next one.
@@ -81,6 +73,12 @@ class Simulator {
          *
          */
         void stepRun();
+
+        /**
+         * Continues running or pauses the simulation if pause button pressed.
+         *
+         */
+        void updateRun();
 };
 
 #endif //_SIMULATOR_H
