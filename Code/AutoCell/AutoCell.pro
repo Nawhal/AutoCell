@@ -36,7 +36,6 @@ SOURCES += \
     gameOfLifeAutomaton.cpp \
     dayAndNightAutomaton.cpp \
     xmlautomatondatamanager.cpp \
-    autocell.cpp
     singleton.cpp
 
 HEADERS += \
@@ -50,7 +49,6 @@ HEADERS += \
     gameOfLifeAutomaton.h \
     dayAndNightAutomaton.h \
     xmlautomatondatamanager.h \
-    autocell.h
     singleton.h
 
 FORMS += \

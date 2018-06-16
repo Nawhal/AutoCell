@@ -11,8 +11,6 @@
 #define _ELEMENTARYSIMULATOR_H
 
 #include "simulator.h"
-#include "elementaryAutomaton.h"
-#include <QObject>
 
 /**
  * @brief The ElementarySimulator class holds everything necessary to simulate an elementary automaton.
@@ -22,14 +20,6 @@ class ElementarySimulator: public Simulator {
         State* states;
 
     public:
-        /**
-         * Constructor that receives a pointer to the automaton and the state to simulate.
-         *
-         * @param autom The automaton to simulate.
-         * @param s The initial state to simulate.
-         */
-        ElementarySimulator(QObject* parent, ElementaryAutomaton* autom, State s) : Simulator(parent, autom, s) { }
-
         /**
          * Display the state at the interface.
          *

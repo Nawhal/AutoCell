@@ -7,30 +7,15 @@
 #include "simulator.h"
 
 /**
- * Simulator implementation;
+ * Simulator implementation
  */
-
-/**
- * Constructor implementation.
- */
-Simulator::Simulator(QObject* parent, Automaton* autom, State s) : QObject(parent), automaton(autom), currentState(s) {
-    timer = new QTimer(this);
-    timer->setInterval(delayMilliSeconds);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateRun()));
-}
 
 /**
  * Display method implementation.
  *
  */
 void Simulator::display() {
-    std::cout << *automaton;
-}
 
-void Simulator::updateRun() {
-    if(simState != RUNNING)
-        timer->stop();
-        //run();
 }
 
 /**
@@ -38,15 +23,15 @@ void Simulator::updateRun() {
  *
  */
 void Simulator::run() {
-    std::cout << "run()" << std::endl;
-    if(simState != RUNNING) {
-        simState = RUNNING;
-        //QTimer::singleShot(delayMilliSeconds, this, SLOT(updateRun()));
-        timer->start();
-    }
-
-    applyTransition();
+    simState = RUNNING;
     display();
+    delay(delayMilliSeconds);
+
+    while(simState == RUNNING){
+        applyTransition();
+        display();
+        delay(delayMilliSeconds);
+    }
 }
 
 /**
@@ -63,6 +48,7 @@ void Simulator::pause() {
  */
 void Simulator::stepRun() {
     simState = STEPRUNNING;
+    display();
     applyTransition();
     display();
     simState = PAUSED;
