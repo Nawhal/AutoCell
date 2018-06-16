@@ -1,15 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
 
 namespace Ui {
     class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
-        Q_OBJECT
+    Q_OBJECT
 
     public:
         explicit MainWindow(QWidget *parent = 0);
@@ -17,6 +17,12 @@ class MainWindow : public QMainWindow
 
     private:
         Ui::MainWindow *ui;
+
+    private slots:
+        void configureElementaryAutomaton ();
+        void configureGameOfLifeAutomaton ();
+        void configureDayAndNightAutomaton ();
+        void quit ();
 };
 
 #endif // MAINWINDOW_H

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+CONFIG   += Qt
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,8 +26,7 @@ QT += xml
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
+    main.cpp \
     cell.cpp \
     state.cpp \
     automaton.cpp \
@@ -36,10 +36,14 @@ SOURCES += \
     gameOfLifeAutomaton.cpp \
     dayAndNightAutomaton.cpp \
     xmlautomatondatamanager.cpp \
-    singleton.cpp
+    singleton.cpp \
+    configdayandnightautomatonwindow.cpp \
+    configelementaryautomatonwindow.cpp \
+    configgameoflifeautomatonwindow.cpp \
+    mainwindow.cpp \
+    simulationwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
     cell.h \
     state.h \
     automaton.h \
@@ -49,7 +53,16 @@ HEADERS += \
     gameOfLifeAutomaton.h \
     dayAndNightAutomaton.h \
     xmlautomatondatamanager.h \
-    singleton.h
+    singleton.h \
+    configdayandnightautomatonwindow.h \
+    configelementaryautomatonwindow.h \
+    configgameoflifeautomatonwindow.h \
+    mainwindow.h \
+    simulationwindow.h
 
 FORMS += \
-        mainwindow.ui
+    configdayandnightautomatonwindow.ui \
+    configelementaryautomatonwindow.ui \
+    configgameoflifeautomatonwindow.ui \
+    mainwindow.ui \
+    simulationwindow.ui

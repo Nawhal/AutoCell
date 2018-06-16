@@ -163,7 +163,7 @@ void XmlAutomatonDataManager::writeGameOfLifeAutomaton(GameOfLifeAutomaton& g,QS
     document.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
 
     // Making the root element of state
-    QDomElement root = document.createElement("ElementaryAutomaton");
+    QDomElement root = document.createElement("GameOfLifeAutomaton");
 
     // Adding the root element to the docuemnt
     document.appendChild(root);
