@@ -17,6 +17,7 @@
 #define RUNNING 1
 #define STEPRUNNING 2
 #define PAUSED 3
+#include <QThread>
 
 /**
  * @brief The Simulator class holds everything necessary to simulate an automaton.
@@ -27,20 +28,6 @@ class Simulator {
         unsigned int delayMilliSeconds = 100;
         State currentState;
         int simState = STOPPED;
-
-        /**
-         * Method that produces a delay on the running of the program.
-         *
-         * @param millisecondsToWait The time in milliseconds to wait.
-         */
-        void delay( int millisecondsToWait ) {
-            /*QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
-
-            while( QTime::currentTime() < dieTime )
-                QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );*/
-
-            QThread::msleep(millisecondsToWait);
-        }
 
     public:
         /**
@@ -82,5 +69,12 @@ class Simulator {
          */
         void stepRun();
 };
+
+/**
+ * Function that produces a delay on the running of the program.
+ *
+ * @param millisecondsToWait The time in milliseconds to wait.
+ */
+void delay (int millisecondsToWait);
 
 #endif //_SIMULATOR_H

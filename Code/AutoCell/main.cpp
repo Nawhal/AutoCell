@@ -4,6 +4,7 @@
 #include "state.h"
 #include "cell.h"
 #include "automaton.h"
+#include "simulator.h"
 #include "elementaryAutomaton.h"
 #include "gameOfLifeAutomaton.h"
 #include "dayAndNightAutomaton.h"
