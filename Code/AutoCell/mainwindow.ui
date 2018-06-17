@@ -143,7 +143,7 @@
      </widget>
     </item>
     <item alignment="Qt::AlignHCenter">
-     <widget class="QPushButton" name="surpriseAutomatonButton">
+     <widget class="QPushButton" name="dayAndNightAutomatonButton">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -206,5 +206,75 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>quitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>389</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>elementaryAutomatonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>configureElementaryAutomaton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>371</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gameOfLifeAutomatonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>configureGameOfLifeAutomaton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dayAndNightAutomatonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>configureDayAndNightAutomaton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>configureElementaryAutomaton()</slot>
+  <slot>configureGameOfLifeAutomaton()</slot>
+  <slot>configureDayAndNightAutomaton()</slot>
+ </slots>
 </ui>

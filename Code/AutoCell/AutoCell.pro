@@ -36,12 +36,12 @@ SOURCES += \
     gameOfLifeAutomaton.cpp \
     dayAndNightAutomaton.cpp \
     xmlautomatondatamanager.cpp \
-    singleton.cpp \
     configdayandnightautomatonwindow.cpp \
     configelementaryautomatonwindow.cpp \
     configgameoflifeautomatonwindow.cpp \
     mainwindow.cpp \
-    simulationwindow.cpp
+    simulationwindow.cpp \
+    windowmanager.cpp
 
 HEADERS += \
     cell.h \
@@ -53,12 +53,12 @@ HEADERS += \
     gameOfLifeAutomaton.h \
     dayAndNightAutomaton.h \
     xmlautomatondatamanager.h \
-    singleton.h \
     configdayandnightautomatonwindow.h \
     configelementaryautomatonwindow.h \
     configgameoflifeautomatonwindow.h \
     mainwindow.h \
-    simulationwindow.h
+    simulationwindow.h \
+    windowmanager.h
 
 FORMS += \
     configdayandnightautomatonwindow.ui \

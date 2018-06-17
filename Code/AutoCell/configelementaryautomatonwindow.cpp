@@ -1,6 +1,8 @@
 #include "configelementaryautomatonwindow.h"
 #include "ui_configelementaryautomatonwindow.h"
 #include "simulationwindow.h"
+#include "windowmanager.h"
+#include "mainwindow.h"
 
 ConfigElementaryAutomatonWindow::ConfigElementaryAutomatonWindow(QWidget *parent) :
     QWidget(parent),
@@ -11,7 +13,8 @@ ConfigElementaryAutomatonWindow::ConfigElementaryAutomatonWindow(QWidget *parent
 
 void ConfigElementaryAutomatonWindow::previousWindow()
 {
-    // TODO
+    WindowManager::getInstance().openWindow(new MainWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 void ConfigElementaryAutomatonWindow::saveConfig()
@@ -21,12 +24,19 @@ void ConfigElementaryAutomatonWindow::saveConfig()
 
 void ConfigElementaryAutomatonWindow::launchAutomaton()
 {
-    SimulationWindow window;
-    window.show();
-    this->close();
+    SimulationWindow *sw = new SimulationWindow();
+    // TODO setup window
+    WindowManager::getInstance().openWindow(sw);
+    WindowManager::getInstance().closeWindow(this);
 }
 
 ConfigElementaryAutomatonWindow::~ConfigElementaryAutomatonWindow()
 {
     delete ui;
+}
+
+void ConfigElementaryAutomatonWindow::closeEvent(QCloseEvent *event)
+{
+    WindowManager::getInstance().removeWindow(this);
+    QWidget::closeEvent(event);
 }

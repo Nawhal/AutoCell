@@ -24,10 +24,10 @@ XmlAutomatonDataManager& XmlAutomatonDataManager::getInstance(){
 }
 
 /**
- * endInstance method implementation.
+ * freeInstance method implementation.
  *
  */
-void XmlAutomatonDataManager::endInstance(){
+void XmlAutomatonDataManager::freeInstance(){
     if(nullptr!=XmlAutomatonDataManager::instance){
         delete XmlAutomatonDataManager::instance;
         XmlAutomatonDataManager::instance=nullptr;
@@ -234,6 +234,7 @@ void XmlAutomatonDataManager::openFileInDocument(QString path,QString filename,Q
     else {
         // loading
         if(!document.setContent(&file)){
+            file.close();
             throw XmlDataManagerException("Cannot set document content");
         }
         file.close();

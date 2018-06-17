@@ -262,10 +262,16 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -286,17 +292,23 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="saveConfigButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>150</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -317,10 +329,16 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -346,5 +364,59 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>returnButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigGameOfLifeAutomatonWindow</receiver>
+   <slot>previousWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveConfigButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigGameOfLifeAutomatonWindow</receiver>
+   <slot>saveConfig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigGameOfLifeAutomatonWindow</receiver>
+   <slot>launchAutomaton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>previousWindow()</slot>
+  <slot>saveConfig()</slot>
+  <slot>launchAutomaton()</slot>
+ </slots>
 </ui>

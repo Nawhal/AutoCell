@@ -108,4 +108,7 @@
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <slot>saveAutomaton()</slot>
+ </slots>
 </ui>

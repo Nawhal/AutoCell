@@ -1,6 +1,8 @@
 #include "configgameoflifeautomatonwindow.h"
 #include "ui_configgameoflifeautomatonwindow.h"
 #include "simulationwindow.h"
+#include "windowmanager.h"
+#include "mainwindow.h"
 
 ConfigGameOfLifeAutomatonWindow::ConfigGameOfLifeAutomatonWindow(QWidget *parent) :
     QWidget(parent),
@@ -11,7 +13,8 @@ ConfigGameOfLifeAutomatonWindow::ConfigGameOfLifeAutomatonWindow(QWidget *parent
 
 void ConfigGameOfLifeAutomatonWindow::previousWindow()
 {
-    // TODO
+    WindowManager::getInstance().openWindow(new MainWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 void ConfigGameOfLifeAutomatonWindow::saveConfig()
@@ -21,12 +24,19 @@ void ConfigGameOfLifeAutomatonWindow::saveConfig()
 
 void ConfigGameOfLifeAutomatonWindow::launchAutomaton()
 {
-    SimulationWindow window;
-    window.show();
-    this->close();
+    SimulationWindow *sw = new SimulationWindow();
+    // TODO setup window
+    WindowManager::getInstance().openWindow(sw);
+    WindowManager::getInstance().closeWindow(this);
 }
 
 ConfigGameOfLifeAutomatonWindow::~ConfigGameOfLifeAutomatonWindow()
 {
     delete ui;
+}
+
+void ConfigGameOfLifeAutomatonWindow::closeEvent(QCloseEvent *event)
+{
+    WindowManager::getInstance().removeWindow(this);
+    QWidget::closeEvent(event);
 }

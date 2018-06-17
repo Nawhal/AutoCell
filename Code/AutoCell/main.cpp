@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "windowmanager.h"
 #include <QApplication>
 #include <iostream>
 #include "state.h"
@@ -22,6 +23,7 @@ void cellEvol(int line, int column,State& s,GameOfLifeAutomaton& gol){
 
 int main (int argc, char *argv[])
 {
+    /*
     State* s = new State(5,6);
     State* s1 = new State(*s);
     s1->changeCell(1, 1, Cell(true));
@@ -64,7 +66,7 @@ int main (int argc, char *argv[])
     golState->changeCell(1, 2, Cell(true));
     golState->changeCell(2, 0, Cell(true));
     golState->changeCell(2, 1, Cell(true));
-    golState->changeCell(2, 2, Cell(true));/*
+    golState->changeCell(2, 2, Cell(true));*//*
     golState->changeCell(3, 5, Cell(true));
     golState->changeCell(3, 4, Cell(true));
     golState->changeCell(3, 6, Cell(true));
@@ -84,6 +86,7 @@ int main (int argc, char *argv[])
 //    cellEvol(2,4,*golState,*gol);
 //    cellEvol(3,6,*golState,*gol);
 
+    /*
     for (int i = 0; i < nb; ++i) {
         cout << "\nEtape " << i << *golState;
         gol->applyTransition(*golState);
@@ -138,17 +141,12 @@ int main (int argc, char *argv[])
 
     delete golState;
     delete gol;
-    man.endInstance();
+    man.freeInstance();
+*/
 
-    int n;
-    cin >> n;
-    return 0;
-
-    /*
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+
+    WindowManager::getInstance().openWindow(new MainWindow());
 
     return a.exec();
-    */
 }

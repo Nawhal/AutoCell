@@ -15,6 +15,9 @@ class ConfigGameOfLifeAutomatonWindow : public QWidget
         explicit ConfigGameOfLifeAutomatonWindow(QWidget *parent = 0);
         ~ConfigGameOfLifeAutomatonWindow();
 
+    protected:
+        void closeEvent(QCloseEvent *event);
+
     private:
         Ui::ConfigGameOfLifeAutomatonWindow *ui;
 

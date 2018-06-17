@@ -15,6 +15,9 @@ class ConfigElementaryAutomatonWindow : public QWidget
         explicit ConfigElementaryAutomatonWindow(QWidget *parent = 0);
         ~ConfigElementaryAutomatonWindow();
 
+    protected:
+        void closeEvent(QCloseEvent *event);
+
     private:
         Ui::ConfigElementaryAutomatonWindow *ui;
 

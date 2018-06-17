@@ -4,6 +4,10 @@
 #include "configelementaryautomatonwindow.h"
 #include "configgameoflifeautomatonwindow.h"
 #include "configdayandnightautomatonwindow.h"
+#include "windowmanager.h"
+
+#include <iostream>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
@@ -14,27 +18,29 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::configureElementaryAutomaton()
 {
-    ConfigElementaryAutomatonWindow window;
-    window.show();
-    this->close();
+    WindowManager::getInstance().openWindow(new ConfigElementaryAutomatonWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 void MainWindow::configureGameOfLifeAutomaton()
 {
-    // TODO
+    WindowManager::getInstance().openWindow(new ConfigGameOfLifeAutomatonWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 void MainWindow::configureDayAndNightAutomaton()
 {
-    // TODO
-}
-
-void MainWindow::quit()
-{
-    // TODO
+    WindowManager::getInstance().openWindow(new ConfigDayAndNightAutomatonWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    WindowManager::getInstance().removeWindow(this);
+    QWidget::closeEvent(event);
 }

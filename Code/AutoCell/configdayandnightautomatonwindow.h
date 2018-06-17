@@ -15,6 +15,9 @@ class ConfigDayAndNightAutomatonWindow : public QWidget
         explicit ConfigDayAndNightAutomatonWindow(QWidget *parent = 0);
         ~ConfigDayAndNightAutomatonWindow();
 
+    protected:
+        void closeEvent(QCloseEvent *event);
+
     private:
         Ui::ConfigDayAndNightAutomatonWindow *ui;
 

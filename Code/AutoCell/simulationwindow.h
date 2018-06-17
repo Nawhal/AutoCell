@@ -15,6 +15,9 @@ class SimulationWindow : public QWidget
         explicit SimulationWindow(QWidget *parent = 0);
         ~SimulationWindow();
 
+    protected:
+        void closeEvent(QCloseEvent *event);
+
     private:
         Ui::SimulationWindow *ui;
 

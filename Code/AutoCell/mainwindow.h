@@ -15,6 +15,9 @@ class MainWindow : public QWidget
         explicit MainWindow(QWidget *parent = 0);
         ~MainWindow();
 
+    protected:
+        void closeEvent(QCloseEvent *event);
+
     private:
         Ui::MainWindow *ui;
 
@@ -22,7 +25,6 @@ class MainWindow : public QWidget
         void configureElementaryAutomaton ();
         void configureGameOfLifeAutomaton ();
         void configureDayAndNightAutomaton ();
-        void quit ();
 };
 
 #endif // MAINWINDOW_H

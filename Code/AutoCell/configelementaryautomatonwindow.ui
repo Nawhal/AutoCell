@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Configrateur Automate à 1 dimension</string>
+   <string>Configurateur Automate à 1 dimension</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -229,6 +229,12 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="numberBitLabelLayout">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
       <item>
        <widget class="QLabel" name="label000">
         <property name="font">
@@ -363,6 +369,12 @@
      <layout class="QHBoxLayout" name="numberBitLayout">
       <property name="spacing">
        <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
       </property>
       <item>
        <widget class="QLineEdit" name="numberBitLineEdit0">
@@ -639,10 +651,16 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -663,17 +681,23 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="saveConfigButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>150</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -694,10 +718,16 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>100</width>
-          <height>100</height>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -723,5 +753,59 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>saveConfigButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigElementaryAutomatonWindow</receiver>
+   <slot>saveConfig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>validateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigElementaryAutomatonWindow</receiver>
+   <slot>launchAutomaton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>402</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>returnButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigElementaryAutomatonWindow</receiver>
+   <slot>previousWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>previousWindow()</slot>
+  <slot>saveConfig()</slot>
+  <slot>launchAutomaton()</slot>
+ </slots>
 </ui>

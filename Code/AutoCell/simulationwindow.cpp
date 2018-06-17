@@ -1,5 +1,6 @@
 #include "simulationwindow.h"
 #include "ui_simulationwindow.h"
+#include "windowmanager.h"
 
 SimulationWindow::SimulationWindow(QWidget *parent) :
     QWidget(parent),
@@ -16,4 +17,10 @@ void SimulationWindow::saveAutomaton()
 SimulationWindow::~SimulationWindow()
 {
     delete ui;
+}
+
+void SimulationWindow::closeEvent(QCloseEvent *event)
+{
+    WindowManager::getInstance().removeWindow(this);
+    QWidget::closeEvent(event);
 }
