@@ -24,6 +24,7 @@ class ConfigGameOfLifeAutomatonWindow : public QWidget
     private slots:
         void previousWindow ();
         void saveConfig ();
+        void loadConfig();
         void launchAutomaton ();
 };
 

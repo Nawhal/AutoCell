@@ -13,6 +13,7 @@
 
 #include <QtXml>
 #include <QString>
+#include <tuple>
 #include "state.h"
 #include "elementaryAutomaton.h"
 #include "gameOfLifeAutomaton.h"
@@ -116,7 +117,7 @@ class XmlAutomatonDataManager
          * @param path The path of the file to write.
          * @param filename The name of the file to write.
          */
-        void writeState(State& s,QString path,QString filename);
+        void writeState(State& s, QString path, QString filename);
 
         /**
          * Reads an instance of State from an external XML file.
@@ -125,7 +126,7 @@ class XmlAutomatonDataManager
          * @param filename The name of the file to be read.
          * @return The state read.
          */
-        State readState(QString path,QString filename);
+        State readState(QString path, QString filename);
 
         /**
          * Writes an instance of Elementary Automaton to an external XML file.
@@ -134,7 +135,7 @@ class XmlAutomatonDataManager
          * @param path The path of the file to write.
          * @param filename The name of the file to write.
          */
-        void writeElementaryAutomaton(ElementaryAutomaton& e,QString path,QString filename);
+        void writeElementaryAutomaton(ElementaryAutomaton& e, QString path, QString filename);
 
         /**
          * Reads an instance of Elementary Automaton from an external XML file.
@@ -143,7 +144,7 @@ class XmlAutomatonDataManager
          * @param filename The name of the file to be read.
          * @return The elementary automaton read.
          */
-        ElementaryAutomaton readElementaryAutomaton(QString path,QString filename);
+        ElementaryAutomaton readElementaryAutomaton(QString path, QString filename);
 
         /**
          * Writes an instance of Game of Life Automaton to an external XML file.
@@ -152,7 +153,7 @@ class XmlAutomatonDataManager
          * @param path The path of the file to write.
          * @param filename The name of the file to write.
          */
-        void writeGameOfLifeAutomaton(GameOfLifeAutomaton& g,QString path,QString filename);
+        void writeGameOfLifeAutomaton(GameOfLifeAutomaton& g, QString path, QString filename);
 
         /**
          * Reads an instance of Game of Life Automaton from an external XML file.
@@ -161,7 +162,67 @@ class XmlAutomatonDataManager
          * @param filename The name of the file to be read.
          * @return The game of life automaton read.
          */
-        GameOfLifeAutomaton readGameOfLifeAutomaton(QString path,QString filename);
+        GameOfLifeAutomaton readGameOfLifeAutomaton(QString path, QString filename);
+
+        /**
+         * Writes the parameters of a day and night automaton to an external XML file.
+         *
+         * @param colNb The number of columns of the automaton.
+         * @param lineNb The number of lines of the automaton.
+         * @param path The path of the file to write.
+         * @param filename The name of the file to write.
+         */
+        void writeDayAndNightAutomatonConfig(unsigned int colNb, unsigned int lineNb, QString path, QString filename);
+
+        /**
+         * Reads the parameters of a day and night automaton from an external XML file.
+         *
+         * @param path The path of the file to be read.
+         * @param filename The name of the file to be read.
+         * @return The parameters read.
+         */
+        std::tuple<unsigned int, unsigned int> readDayAndNightAutomatonConfig(QString path, QString filename);
+
+        /**
+         * Writes the parameters of a game of life automaton to an external XML file.
+         *
+         * @param colNb The number of columns of the automaton.
+         * @param lineNb The number of lines of the automaton.
+         * @param minDeath
+         * @param maxDeath
+         * @param path The path of the file to write.
+         * @param filename The name of the file to write.
+         */
+        void writeGameOfLifeAutomatonConfig(unsigned int colNb, unsigned int lineNb, unsigned int minDeath, unsigned int maxDeath, QString path, QString filename);
+
+        /**
+         * Reads the parameters of a game of life automaton from an external XML file.
+         *
+         * @param path The path of the file to be read.
+         * @param filename The name of the file to be read.
+         * @return The parameters read.
+         */
+        std::tuple<unsigned int, unsigned int, unsigned int, unsigned int> readGameOfLifeAutomatonConfig(QString path, QString filename);
+
+        /**
+         * Writes the parameters of an elementary automaton to an external XML file.
+         *
+         * @param cellNb The number of cells of the automaton.
+         * @param stateNb The number of states of the automaton.
+         * @param ruleNb
+         * @param path The path of the file to write.
+         * @param filename The name of the file to write.
+         */
+        void writeElementaryAutomatonConfig(unsigned int cellNb, unsigned int stateNb, unsigned int ruleNb, QString path, QString filename);
+
+        /**
+         * Reads the parameters of an elementary automaton from an external XML file.
+         *
+         * @param path The path of the file to be read.
+         * @param filename The name of the file to be read.
+         * @return The parameters read.
+         */
+        std::tuple<unsigned int, unsigned int, unsigned int> readElementaryAutomatonConfig(QString path, QString filename);
 
 };
 

@@ -124,7 +124,7 @@
        <number>20</number>
       </property>
       <item row="1" column="0">
-       <widget class="QLabel" name="cellNbLabel">
+       <widget class="QLabel" name="colNbLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -137,7 +137,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="stateNbLineEdit">
+       <widget class="QLineEdit" name="colNbLineEdit">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -149,10 +149,16 @@
           <family>Open Sans</family>
          </font>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="stateNbLabel">
+       <widget class="QLabel" name="LineNbLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -165,7 +171,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="cellNbLineEdit">
+       <widget class="QLineEdit" name="lineNbLineEdit">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -177,10 +183,16 @@
           <family>Open Sans</family>
          </font>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="ruleLabel">
+       <widget class="QLabel" name="minDeathLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -193,7 +205,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLineEdit" name="ruleLineEdit">
+       <widget class="QLineEdit" name="minDeathLineEdit">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -205,10 +217,16 @@
           <family>Open Sans</family>
          </font>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QLabel" name="ruleLabel_2">
+       <widget class="QLabel" name="maxDeathLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -221,7 +239,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLineEdit" name="ruleLineEdit_2">
+       <widget class="QLineEdit" name="maxDeathLineEdit">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -232,6 +250,12 @@
          <font>
           <family>Open Sans</family>
          </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -317,7 +341,37 @@
          </font>
         </property>
         <property name="text">
-         <string>Sauvegarder config</string>
+         <string>Sauvegarder</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="loadConfigButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Charger</string>
         </property>
        </widget>
       </item>
@@ -413,10 +467,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>loadConfigButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigGameOfLifeAutomatonWindow</receiver>
+   <slot>loadConfig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>previousWindow()</slot>
   <slot>saveConfig()</slot>
   <slot>launchAutomaton()</slot>
+  <slot>loadConfig()</slot>
  </slots>
 </ui>

@@ -5,6 +5,7 @@
 
 
 #include "xmlautomatondatamanager.h"
+#include <functional>
 
 /**
  * XmlAutomatonDataManager implementation.
@@ -169,14 +170,13 @@ void XmlAutomatonDataManager::writeGameOfLifeAutomaton(GameOfLifeAutomaton& g,QS
     document.appendChild(root);
 
     // size of state
-    QDomElement neigbors = document.createElement("SurvivalNeighborhood");
-    neigbors.setAttribute("min",g.getMinToNotDie());
-    neigbors.setAttribute("max",g.getMaxToNotDie());
-    root.appendChild(neigbors);
+    QDomElement neighbors = document.createElement("SurvivalNeighborhood");
+    neighbors.setAttribute("min",g.getMinToNotDie());
+    neighbors.setAttribute("max",g.getMaxToNotDie());
+    root.appendChild(neighbors);
 
     //write to file
     writeDocumentInFile(path,filename,document);
-
 }
 
 /**
@@ -190,11 +190,126 @@ GameOfLifeAutomaton XmlAutomatonDataManager::readGameOfLifeAutomaton(QString pat
 
     // Getting root element
     QDomElement root = document.firstChildElement();
-    QDomElement neigborsToSurvive  = root.firstChildElement();
-    unsigned int minNeigbors = neigborsToSurvive.attribute("min","0").toUInt();
-    unsigned int maxNeigbors = neigborsToSurvive.attribute("max","0").toUInt();
+    QDomElement neighborsToSurvive  = root.firstChildElement();
+    unsigned int minNeighbors = neighborsToSurvive.attribute("min","0").toUInt();
+    unsigned int maxNeighbors = neighborsToSurvive.attribute("max","0").toUInt();
 
-    return GameOfLifeAutomaton(minNeigbors,maxNeigbors);
+    return GameOfLifeAutomaton(minNeighbors,maxNeighbors);
+}
+
+/**
+ * writeDayAndNightAutomatonConfig method implementation.
+ */
+void XmlAutomatonDataManager::writeDayAndNightAutomatonConfig(unsigned int colNb, unsigned int lineNb, QString path, QString filename)
+{
+    // Creates a document to write XML
+    QDomDocument document;
+    document.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
+
+    // Making the root element of state
+    QDomElement root = document.createElement("parameters");
+    root.setAttribute("colNb", colNb);
+    root.setAttribute("lineNb", lineNb);
+
+    // Adding the root element to the docuemnt
+    document.appendChild(root);
+
+    // Write to file
+    writeDocumentInFile(path,filename,document);
+}
+
+/**
+ * readDayAndNightAutomatonConfig method implementation.
+ */
+std::tuple<unsigned int, unsigned int> XmlAutomatonDataManager::readDayAndNightAutomatonConfig(QString path, QString filename)
+{
+    // opens the document into document
+    QDomDocument document;
+    openFileInDocument(path, filename, document);
+
+    // Getting root element
+    QDomElement root = document.firstChildElement();
+    unsigned int colNb = root.attribute("colNb","0").toUInt();
+    unsigned int lineNb = root.attribute("lineNb","0").toUInt();
+
+    return std::make_tuple(colNb, lineNb);
+}
+
+/**
+ * writeDayAndNightAutomatonConfig method implementation.
+ */
+void XmlAutomatonDataManager::writeGameOfLifeAutomatonConfig(unsigned int colNb, unsigned int lineNb,
+        unsigned int minDeath, unsigned int maxDeath, QString path, QString filename)
+{
+    // Creates a document to write XML
+    QDomDocument document;
+    document.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
+
+    // Making the root element of state
+    QDomElement root = document.createElement("parameters");
+    root.setAttribute("colNb", colNb);
+    root.setAttribute("lineNb", lineNb);
+    root.setAttribute("minDeath", minDeath);
+    root.setAttribute("maxDeath", maxDeath);
+
+    // Adding the root element to the docuemnt
+    document.appendChild(root);
+
+    // Write to file
+    writeDocumentInFile(path,filename,document);
+}
+
+/**
+ * readDayAndNightAutomatonConfig method implementation.
+ */
+std::tuple<unsigned int, unsigned int, unsigned int, unsigned int> XmlAutomatonDataManager::readGameOfLifeAutomatonConfig(QString path, QString filename)
+{
+    // opens the document into document
+    QDomDocument document;
+    openFileInDocument(path, filename, document);
+
+    // Getting root element
+    QDomElement root = document.firstChildElement();
+    unsigned int colNb = root.attribute("colNb","0").toUInt();
+    unsigned int lineNb = root.attribute("lineNb","0").toUInt();
+    unsigned int minDeath = root.attribute("minDeath","0").toUInt();
+    unsigned int maxDeath = root.attribute("maxDeath","0").toUInt();
+
+    return std::make_tuple(colNb, lineNb, minDeath, maxDeath);
+}
+
+void XmlAutomatonDataManager::writeElementaryAutomatonConfig(unsigned int cellNb, unsigned int stateNb, unsigned int ruleNb, QString path, QString filename)
+{
+    // Creates a document to write XML
+    QDomDocument document;
+    document.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\"");
+
+    // Making the root element of state
+    QDomElement root = document.createElement("parameters");
+    root.setAttribute("cellNb", cellNb);
+    root.setAttribute("stateNb", stateNb);
+    root.setAttribute("ruleNb", ruleNb);
+
+    // Adding the root element to the docuemnt
+    document.appendChild(root);
+
+    // Write to file
+    writeDocumentInFile(path,filename,document);
+}
+
+std::tuple<unsigned int, unsigned int, unsigned int> XmlAutomatonDataManager::readElementaryAutomatonConfig(QString path, QString filename)
+{
+    // opens the document into document
+    QDomDocument document;
+    openFileInDocument(path, filename, document);
+
+    // Getting root element
+    QDomElement root = document.firstChildElement();
+    unsigned int cellNb = root.attribute("cellNb","0").toUInt();
+    unsigned int stateNb = root.attribute("stateNb","0").toUInt();
+    unsigned int ruleNb = root.attribute("ruleNb","0").toUInt();
+
+    return std::make_tuple(cellNb, stateNb, ruleNb);
 }
 
 /**

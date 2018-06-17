@@ -23,6 +23,7 @@ class ConfigDayAndNightAutomatonWindow : public QWidget
 
     private slots:
         void previousWindow ();
+        void loadConfig ();
         void saveConfig ();
         void launchAutomaton ();
 };

@@ -3,6 +3,9 @@
 #include "simulationwindow.h"
 #include "windowmanager.h"
 #include "mainwindow.h"
+#include "xmlautomatondatamanager.h"
+
+#include <QFileDialog>
 
 ConfigElementaryAutomatonWindow::ConfigElementaryAutomatonWindow(QWidget *parent) :
     QWidget(parent),
@@ -19,7 +22,44 @@ void ConfigElementaryAutomatonWindow::previousWindow()
 
 void ConfigElementaryAutomatonWindow::saveConfig()
 {
-    // TODO
+    QString completePath = QFileDialog::getSaveFileName(this,
+        "Sauvegarder la configuration d'automate à 1 dimension", "",
+         "eXtensible Markup Language Files (*.xml);;All Files (*)");
+    if (completePath.isEmpty()) { return; }
+    try {
+        bool worked;
+        unsigned int cellNb = ui->cellNbLineEdit->text().toUInt(&worked);
+        if (!worked) { cellNb = 0; }
+        unsigned int stateNb = ui->stateNbLineEdit->text().toUInt(&worked);
+        if (!worked) { stateNb = 0; }
+        unsigned int ruleNb = ui->ruleLineEdit->text().toUInt(&worked);
+        if (!worked) { ruleNb = 0; }
+        unsigned int index = completePath.lastIndexOf("/");
+        QString dirPath = completePath.left(index);
+        QString fileName = completePath.right(completePath.length() - index - 1);
+        XmlAutomatonDataManager::getInstance().writeElementaryAutomatonConfig(cellNb, stateNb, ruleNb, dirPath, fileName);
+    } catch (std::exception e) { }
+}
+
+void ConfigElementaryAutomatonWindow::loadConfig()
+{
+    QString completePath = QFileDialog::getOpenFileName(this,
+        "Charger la configuration d'automate à 1 dimension", "",
+        "eXtensible Markup Language Files (*.xml);;All Files (*)");
+    if (completePath.isEmpty()) { return; }
+    try {
+        unsigned int index = completePath.lastIndexOf("/");
+        QString dirPath = completePath.left(index);
+        QString fileName = completePath.right(completePath.length() - index - 1);
+        unsigned int cellNb;
+        unsigned int stateNb;
+        unsigned int ruleNb;
+        std::tie(cellNb, stateNb, ruleNb) = XmlAutomatonDataManager::getInstance().readElementaryAutomatonConfig(dirPath, fileName);
+        ui->cellNbLineEdit->setText(QString::number(cellNb));
+        ui->stateNbLineEdit->setText(QString::number(stateNb));
+        ui->ruleLineEdit->setText(QString::number(ruleNb));
+        // TODO tab : bind or set or something
+    } catch (std::exception e) { }
 }
 
 void ConfigElementaryAutomatonWindow::launchAutomaton()
