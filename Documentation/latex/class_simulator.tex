@@ -1,0 +1,107 @@
+\hypertarget{class_simulator}{}\section{Simulator Class Reference}
+\label{class_simulator}\index{Simulator@{Simulator}}
+
+
+The \mbox{\hyperlink{class_simulator}{Simulator}} class holds everything necessary to simulate an automaton.  
+
+
+
+
+{\ttfamily \#include $<$simulator.\+h$>$}
+
+Inheritance diagram for Simulator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_simulator}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_simulator_ae98491fdcf683de0035e01d26cdbd00e}{pause}} ()
+\item 
+void \mbox{\hyperlink{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}{run}} ()
+\item 
+void \mbox{\hyperlink{class_simulator_ad84a8ccf003a5c62a47d4e9cbcc11f32}{step\+Run}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simulator_a367e387c2c34fba34e14dbe1024bc567}{Simulator}} (\mbox{\hyperlink{class_automaton}{Automaton}} $\ast$autom, \mbox{\hyperlink{class_state}{State}} s)
+\item 
+void \mbox{\hyperlink{class_simulator_a0f40dc39043239da2a50e71e2995e689}{apply\+Transition}} ()
+\item 
+virtual void \mbox{\hyperlink{class_simulator_ae67f79cd49d6636f57761eec3b2656b5}{display}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_simulator}{Simulator}} class holds everything necessary to simulate an automaton. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simulator_a367e387c2c34fba34e14dbe1024bc567}\label{class_simulator_a367e387c2c34fba34e14dbe1024bc567}} 
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{Simulator()}{Simulator()}}
+{\footnotesize\ttfamily Simulator\+::\+Simulator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automaton}{Automaton}} $\ast$}]{autom,  }\item[{\mbox{\hyperlink{class_state}{State}}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor that receives a pointer to the automaton and the state to simulate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em autom} & The automaton to simulate. \\
+\hline
+{\em s} & The initial state to simulate. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simulator_a0f40dc39043239da2a50e71e2995e689}\label{class_simulator_a0f40dc39043239da2a50e71e2995e689}} 
+\index{Simulator@{Simulator}!apply\+Transition@{apply\+Transition}}
+\index{apply\+Transition@{apply\+Transition}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{apply\+Transition()}{applyTransition()}}
+{\footnotesize\ttfamily void Simulator\+::apply\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update current state to the next one. \mbox{\Hypertarget{class_simulator_ae67f79cd49d6636f57761eec3b2656b5}\label{class_simulator_ae67f79cd49d6636f57761eec3b2656b5}} 
+\index{Simulator@{Simulator}!display@{display}}
+\index{display@{display}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Simulator\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Display the state at the interface.
+
+\mbox{\hyperlink{class_simulator}{Simulator}} implementation Display method implementation. 
+
+Reimplemented in \mbox{\hyperlink{class_elementary_simulator_ac12315c72e09d7b96e6652db8867e39a}{Elementary\+Simulator}}.
+
+\mbox{\Hypertarget{class_simulator_ae98491fdcf683de0035e01d26cdbd00e}\label{class_simulator_ae98491fdcf683de0035e01d26cdbd00e}} 
+\index{Simulator@{Simulator}!pause@{pause}}
+\index{pause@{pause}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{pause}{pause}}
+{\footnotesize\ttfamily void Simulator\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Pause the simulation.
+
+Pause method implementation. \mbox{\Hypertarget{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}\label{class_simulator_aa2de7e32b04cc3e8fc60aec23997621b}} 
+\index{Simulator@{Simulator}!run@{run}}
+\index{run@{run}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{run}{run}}
+{\footnotesize\ttfamily void Simulator\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Run the simulation in a continuous way.
+
+Run method implementation. \mbox{\Hypertarget{class_simulator_ad84a8ccf003a5c62a47d4e9cbcc11f32}\label{class_simulator_ad84a8ccf003a5c62a47d4e9cbcc11f32}} 
+\index{Simulator@{Simulator}!step\+Run@{step\+Run}}
+\index{step\+Run@{step\+Run}!Simulator@{Simulator}}
+\subsubsection{\texorpdfstring{step\+Run}{stepRun}}
+{\footnotesize\ttfamily void Simulator\+::step\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Run the simulation one step at a time.
+
+Step\+Run method implementation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{simulator_8h}{simulator.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{simulator_8cpp}{simulator.\+cpp}}\end{DoxyCompactItemize}

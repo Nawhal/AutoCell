@@ -1,0 +1,231 @@
+\hypertarget{class_state}{}\section{State Class Reference}
+\label{class_state}\index{State@{State}}
+
+
+The \mbox{\hyperlink{class_state}{State}} class holds every cell of a specific moment.  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} for the \mbox{\hyperlink{class_state}{State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_aa2771d8b47729a04ae5a29e7a62fcd8b}{State}} (const unsigned int lin, const unsigned int col)
+\item 
+\mbox{\hyperlink{class_state_a893ddf069c68f0b3b0b019f56787f6c5}{State}} (const \mbox{\hyperlink{class_state}{State}} \&st)
+\item 
+\mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\item 
+unsigned int \mbox{\hyperlink{class_state_a8c0e0ddedf2b60efdf27f78884cea0ae}{get\+Nb\+Of\+Living\+Neighbors}} (int line, int column) const
+\item 
+int \mbox{\hyperlink{class_state_a89f0f517cf988dd3ee1d952c853328d6}{get\+Nb\+Line}} () const
+\item 
+int \mbox{\hyperlink{class_state_ad46b1fe0d5693425fa4277d1f257cd11}{get\+Nb\+Column}} () const
+\item 
+bool \mbox{\hyperlink{class_state_aef7e65c5de780a3e933e1d145c67965e}{is\+In\+Grid}} (int line, int column) const
+\item 
+bool \mbox{\hyperlink{class_state_aecc33cac215cff3cad8b789bfc52c6b6}{get\+Cell\+Value}} (int line, int column) const
+\item 
+void \mbox{\hyperlink{class_state_abede2d4d10b22198b91d3392870c786d}{change\+Cell}} (unsigned int line, unsigned int column, const \mbox{\hyperlink{class_cell}{Cell}} new\+Cell)
+\item 
+\mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_state_a586600f9cce93894c1804104db734cf6}{begin}} () const
+\item 
+\mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_state_ab37b86dd38536debe44f82f8fff02eed}{end}} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_state_aa1b8f65fa23e0c5f68a6c236ef7e5653}{operator$<$$<$}} (std\+::ostream \&o, const \mbox{\hyperlink{class_state}{State}} \&s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_state}{State}} class holds every cell of a specific moment. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_state_aa2771d8b47729a04ae5a29e7a62fcd8b}\label{class_state_aa2771d8b47729a04ae5a29e7a62fcd8b}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{const unsigned int}]{lin,  }\item[{const unsigned int}]{col }\end{DoxyParamCaption})}
+
+Constructor that sets the number of lines and columns on a state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & Number of columns of a state. \\
+\hline
+{\em lin} & Number of lines of a state.\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_state}{State}} implementation. \mbox{\hyperlink{class_state}{State}} constructor implementation. \mbox{\Hypertarget{class_state_a893ddf069c68f0b3b0b019f56787f6c5}\label{class_state_a893ddf069c68f0b3b0b019f56787f6c5}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\texorpdfstring{State()}{State()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{st }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & The state to copy.\\
+\hline
+\end{DoxyParams}
+\mbox{\hyperlink{class_state}{State}} copy constructor implementation. \mbox{\Hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$\+State}}
+\index{````~State@{$\sim$\+State}!State@{State}}
+\subsubsection{\texorpdfstring{$\sim$\+State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor.
+
+\mbox{\hyperlink{class_state}{State}} destructor implementation. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_a586600f9cce93894c1804104db734cf6}\label{class_state_a586600f9cce93894c1804104db734cf6}} 
+\index{State@{State}!begin@{begin}}
+\index{begin@{begin}!State@{State}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} State\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets an iterator to the first position of the state.
+
+\begin{DoxyReturn}{Returns}
+An iterator to the fisrt position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_abede2d4d10b22198b91d3392870c786d}\label{class_state_abede2d4d10b22198b91d3392870c786d}} 
+\index{State@{State}!change\+Cell@{change\+Cell}}
+\index{change\+Cell@{change\+Cell}!State@{State}}
+\subsubsection{\texorpdfstring{change\+Cell()}{changeCell()}}
+{\footnotesize\ttfamily void State\+::change\+Cell (\begin{DoxyParamCaption}\item[{unsigned int}]{line,  }\item[{unsigned int}]{column,  }\item[{const \mbox{\hyperlink{class_cell}{Cell}}}]{new\+Cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Changes a cell, if the cell isn\textquotesingle{}t in the grid, raises an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line of the cell to change. \\
+\hline
+{\em column} & The column of the cell to change. \\
+\hline
+{\em new\+Cell} & The new cell to put in the state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_state_ab37b86dd38536debe44f82f8fff02eed}\label{class_state_ab37b86dd38536debe44f82f8fff02eed}} 
+\index{State@{State}!end@{end}}
+\index{end@{end}!State@{State}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} State\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets an iterator to the last position of the state.
+
+\begin{DoxyReturn}{Returns}
+An iterator to the last position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_aecc33cac215cff3cad8b789bfc52c6b6}\label{class_state_aecc33cac215cff3cad8b789bfc52c6b6}} 
+\index{State@{State}!get\+Cell\+Value@{get\+Cell\+Value}}
+\index{get\+Cell\+Value@{get\+Cell\+Value}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Cell\+Value()}{getCellValue()}}
+{\footnotesize\ttfamily bool State\+::get\+Cell\+Value (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tries to get the value of a state\textquotesingle{}s cell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line of the cell to get. \\
+\hline
+{\em column} & The column of the cell to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the cell if in the grid or false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_ad46b1fe0d5693425fa4277d1f257cd11}\label{class_state_ad46b1fe0d5693425fa4277d1f257cd11}} 
+\index{State@{State}!get\+Nb\+Column@{get\+Nb\+Column}}
+\index{get\+Nb\+Column@{get\+Nb\+Column}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Nb\+Column()}{getNbColumn()}}
+{\footnotesize\ttfamily int State\+::get\+Nb\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns number of columns in the cell grid.
+
+\begin{DoxyReturn}{Returns}
+The number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a89f0f517cf988dd3ee1d952c853328d6}\label{class_state_a89f0f517cf988dd3ee1d952c853328d6}} 
+\index{State@{State}!get\+Nb\+Line@{get\+Nb\+Line}}
+\index{get\+Nb\+Line@{get\+Nb\+Line}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Nb\+Line()}{getNbLine()}}
+{\footnotesize\ttfamily int State\+::get\+Nb\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns number of lines in the cell grid.
+
+\begin{DoxyReturn}{Returns}
+The number of lines. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_a8c0e0ddedf2b60efdf27f78884cea0ae}\label{class_state_a8c0e0ddedf2b60efdf27f78884cea0ae}} 
+\index{State@{State}!get\+Nb\+Of\+Living\+Neighbors@{get\+Nb\+Of\+Living\+Neighbors}}
+\index{get\+Nb\+Of\+Living\+Neighbors@{get\+Nb\+Of\+Living\+Neighbors}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Nb\+Of\+Living\+Neighbors()}{getNbOfLivingNeighbors()}}
+{\footnotesize\ttfamily unsigned int State\+::get\+Nb\+Of\+Living\+Neighbors (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+Returns number of living neighbors around a cell on line line and column column.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & The cell around which the neighbors are counted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of living neighbors.
+\end{DoxyReturn}
+get\+Nb\+Of\+Living\+Neighbors method implementation. \mbox{\Hypertarget{class_state_aef7e65c5de780a3e933e1d145c67965e}\label{class_state_aef7e65c5de780a3e933e1d145c67965e}} 
+\index{State@{State}!is\+In\+Grid@{is\+In\+Grid}}
+\index{is\+In\+Grid@{is\+In\+Grid}!State@{State}}
+\subsubsection{\texorpdfstring{is\+In\+Grid()}{isInGrid()}}
+{\footnotesize\ttfamily bool State\+::is\+In\+Grid (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests if a position is valid on the state\textquotesingle{}s grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line to test. \\
+\hline
+{\em column} & The column to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if valid, false if invalid. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_state_aa1b8f65fa23e0c5f68a6c236ef7e5653}\label{class_state_aa1b8f65fa23e0c5f68a6c236ef7e5653}} 
+\index{State@{State}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!State@{State}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{o,  }\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Assignment operator overload.
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The out stream to write to. \\
+\hline
+{\em s} & The state to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The out stream with the state written to.
+\end{DoxyReturn}
+Assignment operator overload implementation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{state_8h}{state.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{state_8cpp}{state.\+cpp}}\end{DoxyCompactItemize}

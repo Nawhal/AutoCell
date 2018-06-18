@@ -1,0 +1,298 @@
+\hypertarget{class_xml_automaton_data_manager}{}\section{Xml\+Automaton\+Data\+Manager Class Reference}
+\label{class_xml_automaton_data_manager}\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+
+
+The \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}} class is an implementation of a singleton that holds the methods necessary to treat the reading and writing to external X\+ML file.  
+
+
+
+
+{\ttfamily \#include $<$xmlautomatondatamanager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_ae184eee52e68ad5557a01ab2b3f697a8}{write\+State}} (\mbox{\hyperlink{class_state}{State}} \&s, Q\+String path, Q\+String filename)
+\item 
+\mbox{\hyperlink{class_state}{State}} \mbox{\hyperlink{class_xml_automaton_data_manager_a5d5eea4ab9989ee0e412c38d56aa5fcf}{read\+State}} (Q\+String path, Q\+String filename)
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_a4cd67227e959b0f302eb8d2214477886}{write\+Elementary\+Automaton}} (\mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} \&e, Q\+String path, Q\+String filename)
+\item 
+\mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} \mbox{\hyperlink{class_xml_automaton_data_manager_a1bfbd91aa176a1b18ee87630eec9929d}{read\+Elementary\+Automaton}} (Q\+String path, Q\+String filename)
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_a60e0ea7435a89d2ca6508db1ba83ae2b}{write\+Game\+Of\+Life\+Automaton}} (\mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} \&g, Q\+String path, Q\+String filename)
+\item 
+\mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} \mbox{\hyperlink{class_xml_automaton_data_manager_a23c0c0d1a7f5041f5969045e7cee1bdf}{read\+Game\+Of\+Life\+Automaton}} (Q\+String path, Q\+String filename)
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_a790cebac70b205d4b527227372ac91ba}{write\+Day\+And\+Night\+Automaton\+Config}} (unsigned int col\+Nb, unsigned int line\+Nb, Q\+String path, Q\+String filename)
+\item 
+std\+::tuple$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{class_xml_automaton_data_manager_a1ae0eceb9259b11a80fc62e9f694773a}{read\+Day\+And\+Night\+Automaton\+Config}} (Q\+String path, Q\+String filename)
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_ab028d9318b2243d6a48fc352a5988a90}{write\+Game\+Of\+Life\+Automaton\+Config}} (unsigned int col\+Nb, unsigned int line\+Nb, unsigned int min\+Death, unsigned int max\+Death, Q\+String path, Q\+String filename)
+\item 
+std\+::tuple$<$ unsigned int, unsigned int, unsigned int, unsigned int $>$ \mbox{\hyperlink{class_xml_automaton_data_manager_ac1f0bb8c4dbb2e21828132f58613718f}{read\+Game\+Of\+Life\+Automaton\+Config}} (Q\+String path, Q\+String filename)
+\item 
+void \mbox{\hyperlink{class_xml_automaton_data_manager_acbf0f11aba6cb2bf77c4e44b1685cf05}{write\+Elementary\+Automaton\+Config}} (unsigned int cell\+Nb, unsigned int state\+Nb, unsigned int rule\+Nb, Q\+String path, Q\+String filename)
+\item 
+std\+::tuple$<$ unsigned int, unsigned int, unsigned int $>$ \mbox{\hyperlink{class_xml_automaton_data_manager_a41937afcc79edb40a3077351aa529a3a}{read\+Elementary\+Automaton\+Config}} (Q\+String path, Q\+String filename)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}} \& \mbox{\hyperlink{class_xml_automaton_data_manager_a69a86fb89604a85a93f411a058c7828e}{get\+Instance}} ()
+\item 
+static void \mbox{\hyperlink{class_xml_automaton_data_manager_a3fa4f7bd24f5e07015b4092e840ca092}{free\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}} class is an implementation of a singleton that holds the methods necessary to treat the reading and writing to external X\+ML file. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_automaton_data_manager_a3fa4f7bd24f5e07015b4092e840ca092}\label{class_xml_automaton_data_manager_a3fa4f7bd24f5e07015b4092e840ca092}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!free\+Instance@{free\+Instance}}
+\index{free\+Instance@{free\+Instance}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{free\+Instance()}{freeInstance()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::free\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The method to delete the only instance of \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}}.
+
+free\+Instance method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a69a86fb89604a85a93f411a058c7828e}\label{class_xml_automaton_data_manager_a69a86fb89604a85a93f411a058c7828e}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}} \& Xml\+Automaton\+Data\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the only instance of the \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}} class.
+
+\begin{DoxyReturn}{Returns}
+The single object of \mbox{\hyperlink{class_xml_automaton_data_manager}{Xml\+Automaton\+Data\+Manager}}.
+\end{DoxyReturn}
+get\+Instance method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a1ae0eceb9259b11a80fc62e9f694773a}\label{class_xml_automaton_data_manager_a1ae0eceb9259b11a80fc62e9f694773a}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+Day\+And\+Night\+Automaton\+Config@{read\+Day\+And\+Night\+Automaton\+Config}}
+\index{read\+Day\+And\+Night\+Automaton\+Config@{read\+Day\+And\+Night\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+Day\+And\+Night\+Automaton\+Config()}{readDayAndNightAutomatonConfig()}}
+{\footnotesize\ttfamily std\+::tuple$<$ unsigned int, unsigned int $>$ Xml\+Automaton\+Data\+Manager\+::read\+Day\+And\+Night\+Automaton\+Config (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads the parameters of a day and night automaton from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameters read.
+\end{DoxyReturn}
+read\+Day\+And\+Night\+Automaton\+Config method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a1bfbd91aa176a1b18ee87630eec9929d}\label{class_xml_automaton_data_manager_a1bfbd91aa176a1b18ee87630eec9929d}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+Elementary\+Automaton@{read\+Elementary\+Automaton}}
+\index{read\+Elementary\+Automaton@{read\+Elementary\+Automaton}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+Elementary\+Automaton()}{readElementaryAutomaton()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} Xml\+Automaton\+Data\+Manager\+::read\+Elementary\+Automaton (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads an instance of Elementary \mbox{\hyperlink{class_automaton}{Automaton}} from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The elementary automaton read.
+\end{DoxyReturn}
+read\+Elementary\+Automaton method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a41937afcc79edb40a3077351aa529a3a}\label{class_xml_automaton_data_manager_a41937afcc79edb40a3077351aa529a3a}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+Elementary\+Automaton\+Config@{read\+Elementary\+Automaton\+Config}}
+\index{read\+Elementary\+Automaton\+Config@{read\+Elementary\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+Elementary\+Automaton\+Config()}{readElementaryAutomatonConfig()}}
+{\footnotesize\ttfamily std\+::tuple$<$ unsigned int, unsigned int, unsigned int $>$ Xml\+Automaton\+Data\+Manager\+::read\+Elementary\+Automaton\+Config (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads the parameters of an elementary automaton from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameters read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_xml_automaton_data_manager_a23c0c0d1a7f5041f5969045e7cee1bdf}\label{class_xml_automaton_data_manager_a23c0c0d1a7f5041f5969045e7cee1bdf}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+Game\+Of\+Life\+Automaton@{read\+Game\+Of\+Life\+Automaton}}
+\index{read\+Game\+Of\+Life\+Automaton@{read\+Game\+Of\+Life\+Automaton}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+Game\+Of\+Life\+Automaton()}{readGameOfLifeAutomaton()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} Xml\+Automaton\+Data\+Manager\+::read\+Game\+Of\+Life\+Automaton (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads an instance of Game of Life \mbox{\hyperlink{class_automaton}{Automaton}} from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The game of life automaton read.
+\end{DoxyReturn}
+read\+Game\+Of\+Life\+Automaton method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_ac1f0bb8c4dbb2e21828132f58613718f}\label{class_xml_automaton_data_manager_ac1f0bb8c4dbb2e21828132f58613718f}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+Game\+Of\+Life\+Automaton\+Config@{read\+Game\+Of\+Life\+Automaton\+Config}}
+\index{read\+Game\+Of\+Life\+Automaton\+Config@{read\+Game\+Of\+Life\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+Game\+Of\+Life\+Automaton\+Config()}{readGameOfLifeAutomatonConfig()}}
+{\footnotesize\ttfamily std\+::tuple$<$ unsigned int, unsigned int, unsigned int, unsigned int $>$ Xml\+Automaton\+Data\+Manager\+::read\+Game\+Of\+Life\+Automaton\+Config (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads the parameters of a game of life automaton from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameters read.
+\end{DoxyReturn}
+read\+Day\+And\+Night\+Automaton\+Config method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a5d5eea4ab9989ee0e412c38d56aa5fcf}\label{class_xml_automaton_data_manager_a5d5eea4ab9989ee0e412c38d56aa5fcf}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!read\+State@{read\+State}}
+\index{read\+State@{read\+State}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{read\+State()}{readState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state}{State}} Xml\+Automaton\+Data\+Manager\+::read\+State (\begin{DoxyParamCaption}\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Reads an instance of \mbox{\hyperlink{class_state}{State}} from an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file to be read. \\
+\hline
+{\em filename} & The name of the file to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The state read.
+\end{DoxyReturn}
+read\+State method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a790cebac70b205d4b527227372ac91ba}\label{class_xml_automaton_data_manager_a790cebac70b205d4b527227372ac91ba}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+Day\+And\+Night\+Automaton\+Config@{write\+Day\+And\+Night\+Automaton\+Config}}
+\index{write\+Day\+And\+Night\+Automaton\+Config@{write\+Day\+And\+Night\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+Day\+And\+Night\+Automaton\+Config()}{writeDayAndNightAutomatonConfig()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+Day\+And\+Night\+Automaton\+Config (\begin{DoxyParamCaption}\item[{unsigned int}]{col\+Nb,  }\item[{unsigned int}]{line\+Nb,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes the parameters of a day and night automaton to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+Nb} & The number of columns of the automaton. \\
+\hline
+{\em line\+Nb} & The number of lines of the automaton. \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write.\\
+\hline
+\end{DoxyParams}
+write\+Day\+And\+Night\+Automaton\+Config method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_a4cd67227e959b0f302eb8d2214477886}\label{class_xml_automaton_data_manager_a4cd67227e959b0f302eb8d2214477886}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+Elementary\+Automaton@{write\+Elementary\+Automaton}}
+\index{write\+Elementary\+Automaton@{write\+Elementary\+Automaton}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+Elementary\+Automaton()}{writeElementaryAutomaton()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+Elementary\+Automaton (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} \&}]{e,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes an instance of Elementary \mbox{\hyperlink{class_automaton}{Automaton}} to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The elementary automaton to be written. \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write.\\
+\hline
+\end{DoxyParams}
+write\+Elementary\+Automaton method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_acbf0f11aba6cb2bf77c4e44b1685cf05}\label{class_xml_automaton_data_manager_acbf0f11aba6cb2bf77c4e44b1685cf05}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+Elementary\+Automaton\+Config@{write\+Elementary\+Automaton\+Config}}
+\index{write\+Elementary\+Automaton\+Config@{write\+Elementary\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+Elementary\+Automaton\+Config()}{writeElementaryAutomatonConfig()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+Elementary\+Automaton\+Config (\begin{DoxyParamCaption}\item[{unsigned int}]{cell\+Nb,  }\item[{unsigned int}]{state\+Nb,  }\item[{unsigned int}]{rule\+Nb,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes the parameters of an elementary automaton to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell\+Nb} & The number of cells of the automaton. \\
+\hline
+{\em state\+Nb} & The number of states of the automaton. \\
+\hline
+{\em rule\+Nb} & \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_automaton_data_manager_a60e0ea7435a89d2ca6508db1ba83ae2b}\label{class_xml_automaton_data_manager_a60e0ea7435a89d2ca6508db1ba83ae2b}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+Game\+Of\+Life\+Automaton@{write\+Game\+Of\+Life\+Automaton}}
+\index{write\+Game\+Of\+Life\+Automaton@{write\+Game\+Of\+Life\+Automaton}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+Game\+Of\+Life\+Automaton()}{writeGameOfLifeAutomaton()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+Game\+Of\+Life\+Automaton (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} \&}]{g,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes an instance of Game of Life \mbox{\hyperlink{class_automaton}{Automaton}} to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The game of life automaton to be written. \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write.\\
+\hline
+\end{DoxyParams}
+write\+Game\+Of\+Life\+Automaton method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_ab028d9318b2243d6a48fc352a5988a90}\label{class_xml_automaton_data_manager_ab028d9318b2243d6a48fc352a5988a90}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+Game\+Of\+Life\+Automaton\+Config@{write\+Game\+Of\+Life\+Automaton\+Config}}
+\index{write\+Game\+Of\+Life\+Automaton\+Config@{write\+Game\+Of\+Life\+Automaton\+Config}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+Game\+Of\+Life\+Automaton\+Config()}{writeGameOfLifeAutomatonConfig()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+Game\+Of\+Life\+Automaton\+Config (\begin{DoxyParamCaption}\item[{unsigned int}]{col\+Nb,  }\item[{unsigned int}]{line\+Nb,  }\item[{unsigned int}]{min\+Death,  }\item[{unsigned int}]{max\+Death,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes the parameters of a game of life automaton to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+Nb} & The number of columns of the automaton. \\
+\hline
+{\em line\+Nb} & The number of lines of the automaton. \\
+\hline
+{\em min\+Death} & \\
+\hline
+{\em max\+Death} & \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write.\\
+\hline
+\end{DoxyParams}
+write\+Day\+And\+Night\+Automaton\+Config method implementation. \mbox{\Hypertarget{class_xml_automaton_data_manager_ae184eee52e68ad5557a01ab2b3f697a8}\label{class_xml_automaton_data_manager_ae184eee52e68ad5557a01ab2b3f697a8}} 
+\index{Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}!write\+State@{write\+State}}
+\index{write\+State@{write\+State}!Xml\+Automaton\+Data\+Manager@{Xml\+Automaton\+Data\+Manager}}
+\subsubsection{\texorpdfstring{write\+State()}{writeState()}}
+{\footnotesize\ttfamily void Xml\+Automaton\+Data\+Manager\+::write\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} \&}]{s,  }\item[{Q\+String}]{path,  }\item[{Q\+String}]{filename }\end{DoxyParamCaption})}
+
+Writes an instance of \mbox{\hyperlink{class_state}{State}} to an external X\+ML file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The state to be written. \\
+\hline
+{\em path} & The path of the file to write. \\
+\hline
+{\em filename} & The name of the file to write.\\
+\hline
+\end{DoxyParams}
+write\+State method implementation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{xmlautomatondatamanager_8h}{xmlautomatondatamanager.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{xmlautomatondatamanager_8cpp}{xmlautomatondatamanager.\+cpp}}\end{DoxyCompactItemize}

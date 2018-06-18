@@ -1,0 +1,188 @@
+\hypertarget{class_game_of_life_automaton}{}\section{Game\+Of\+Life\+Automaton Class Reference}
+\label{class_game_of_life_automaton}\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+
+
+The \mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} class holds the information of how to treat the current state to arrive at the next state of the game of life case.  
+
+
+
+
+{\ttfamily \#include $<$game\+Of\+Life\+Automaton.\+h$>$}
+
+Inheritance diagram for Game\+Of\+Life\+Automaton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_game_of_life_automaton}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_of_life_automaton_a9d9a437e1f57f13a5ad9cc1c3d441ddf}{Game\+Of\+Life\+Automaton}} (unsigned int min\+Nd, unsigned int max\+Nd)
+\item 
+virtual \mbox{\hyperlink{class_game_of_life_automaton_a3f4ab2012723f8d5eb587a569c91c6ad}{$\sim$\+Game\+Of\+Life\+Automaton}} ()
+\item 
+bool \mbox{\hyperlink{class_game_of_life_automaton_aa25460a77972a5f13f57bb5f5adece53}{is\+Not\+In\+Range}} (const \mbox{\hyperlink{class_state}{State}} \&current\+State) const
+\item 
+virtual void \mbox{\hyperlink{class_game_of_life_automaton_a090e7935a13cb6f71a0331fff7cb6083}{print}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em print \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game_of_life_automaton_ac806423a9e936950e2dabd6989575f1e}{apply\+Transition}} (\mbox{\hyperlink{class_state}{State}} \&current\+State) const
+\item 
+virtual bool \mbox{\hyperlink{class_game_of_life_automaton_a48d5d90ed7e6e62f796700a73671d5e7}{will\+Be\+Born}} (unsigned int line, unsigned int column, \mbox{\hyperlink{class_state}{State}} \&s) const
+\item 
+virtual bool \mbox{\hyperlink{class_game_of_life_automaton_a10c2c84bfceec5d67149d9b51849c181}{will\+Die}} (unsigned int line, unsigned int column, \mbox{\hyperlink{class_state}{State}} \&s) const
+\item 
+unsigned int \mbox{\hyperlink{class_game_of_life_automaton_a5b39939cf80b47d3b0c5a0c16dc07c2e}{get\+Min\+To\+Not\+Die}} () const
+\item 
+unsigned int \mbox{\hyperlink{class_game_of_life_automaton_afe6b71a259b440f172ca8428af92f9ec}{get\+Max\+To\+Not\+Die}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_game_of_life_automaton}{Game\+Of\+Life\+Automaton}} class holds the information of how to treat the current state to arrive at the next state of the game of life case. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_of_life_automaton_a9d9a437e1f57f13a5ad9cc1c3d441ddf}\label{class_game_of_life_automaton_a9d9a437e1f57f13a5ad9cc1c3d441ddf}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{Game\+Of\+Life\+Automaton()}{GameOfLifeAutomaton()}}
+{\footnotesize\ttfamily Game\+Of\+Life\+Automaton\+::\+Game\+Of\+Life\+Automaton (\begin{DoxyParamCaption}\item[{unsigned int}]{min\+Nd,  }\item[{unsigned int}]{max\+Nd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor that sets the minimun number of neighbours to die and the maximum number of neighbours not to die.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Nd} & The minimun number of neighbours to die. \\
+\hline
+{\em max\+Nd} & The maximum number of neighbours not to die. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_of_life_automaton_a3f4ab2012723f8d5eb587a569c91c6ad}\label{class_game_of_life_automaton_a3f4ab2012723f8d5eb587a569c91c6ad}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!````~Game\+Of\+Life\+Automaton@{$\sim$\+Game\+Of\+Life\+Automaton}}
+\index{````~Game\+Of\+Life\+Automaton@{$\sim$\+Game\+Of\+Life\+Automaton}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{$\sim$\+Game\+Of\+Life\+Automaton()}{~GameOfLifeAutomaton()}}
+{\footnotesize\ttfamily virtual Game\+Of\+Life\+Automaton\+::$\sim$\+Game\+Of\+Life\+Automaton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_of_life_automaton_ac806423a9e936950e2dabd6989575f1e}\label{class_game_of_life_automaton_ac806423a9e936950e2dabd6989575f1e}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!apply\+Transition@{apply\+Transition}}
+\index{apply\+Transition@{apply\+Transition}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{apply\+Transition()}{applyTransition()}}
+{\footnotesize\ttfamily void Game\+Of\+Life\+Automaton\+::apply\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} \&}]{current\+State }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update the current state to the next based on the automaton\textquotesingle{}s rules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+State} & The current state of the automaton.\\
+\hline
+\end{DoxyParams}
+apply\+Transition method implementation. 
+
+Implements \mbox{\hyperlink{class_automaton_aaf6b5ebd7a820867bfaab0f6892cc0b8}{Automaton}}.
+
+\mbox{\Hypertarget{class_game_of_life_automaton_afe6b71a259b440f172ca8428af92f9ec}\label{class_game_of_life_automaton_afe6b71a259b440f172ca8428af92f9ec}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!get\+Max\+To\+Not\+Die@{get\+Max\+To\+Not\+Die}}
+\index{get\+Max\+To\+Not\+Die@{get\+Max\+To\+Not\+Die}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{get\+Max\+To\+Not\+Die()}{getMaxToNotDie()}}
+{\footnotesize\ttfamily unsigned int Game\+Of\+Life\+Automaton\+::get\+Max\+To\+Not\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the maximum value necessary for a cell to not die.
+
+\begin{DoxyReturn}{Returns}
+The maximum value to not die. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_of_life_automaton_a5b39939cf80b47d3b0c5a0c16dc07c2e}\label{class_game_of_life_automaton_a5b39939cf80b47d3b0c5a0c16dc07c2e}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!get\+Min\+To\+Not\+Die@{get\+Min\+To\+Not\+Die}}
+\index{get\+Min\+To\+Not\+Die@{get\+Min\+To\+Not\+Die}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{get\+Min\+To\+Not\+Die()}{getMinToNotDie()}}
+{\footnotesize\ttfamily unsigned int Game\+Of\+Life\+Automaton\+::get\+Min\+To\+Not\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum value necessary for a cell to not die.
+
+\begin{DoxyReturn}{Returns}
+The minimum value to not die. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_of_life_automaton_aa25460a77972a5f13f57bb5f5adece53}\label{class_game_of_life_automaton_aa25460a77972a5f13f57bb5f5adece53}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!is\+Not\+In\+Range@{is\+Not\+In\+Range}}
+\index{is\+Not\+In\+Range@{is\+Not\+In\+Range}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{is\+Not\+In\+Range()}{isNotInRange()}}
+{\footnotesize\ttfamily bool Game\+Of\+Life\+Automaton\+::is\+Not\+In\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}} \&}]{current\+State }\end{DoxyParamCaption}) const}
+
+Tests if a state is not in range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+State} & The state to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if not in range, false otherwise.
+\end{DoxyReturn}
+\mbox{\hyperlink{class_automaton}{Automaton}} implementation is\+Not\+In\+Range method implementation. \mbox{\Hypertarget{class_game_of_life_automaton_a090e7935a13cb6f71a0331fff7cb6083}\label{class_game_of_life_automaton_a090e7935a13cb6f71a0331fff7cb6083}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!print@{print}}
+\index{print@{print}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Game\+Of\+Life\+Automaton\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+print 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & print method implementation. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_automaton_a33107fc96cfe40a75db43b7403dd3194}{Automaton}}.
+
+\mbox{\Hypertarget{class_game_of_life_automaton_a48d5d90ed7e6e62f796700a73671d5e7}\label{class_game_of_life_automaton_a48d5d90ed7e6e62f796700a73671d5e7}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!will\+Be\+Born@{will\+Be\+Born}}
+\index{will\+Be\+Born@{will\+Be\+Born}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{will\+Be\+Born()}{willBeBorn()}}
+{\footnotesize\ttfamily bool Game\+Of\+Life\+Automaton\+::will\+Be\+Born (\begin{DoxyParamCaption}\item[{unsigned int}]{line,  }\item[{unsigned int}]{column,  }\item[{\mbox{\hyperlink{class_state}{State}} \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tests if the value of a cell will become true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line of the cell to test. \\
+\hline
+{\em column} & The column of the cell to test. \\
+\hline
+{\em s} & The state in which the cell is contained. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cell\textquotesingle{}s value will become true.
+\end{DoxyReturn}
+will\+Be\+Born method implementation. \mbox{\Hypertarget{class_game_of_life_automaton_a10c2c84bfceec5d67149d9b51849c181}\label{class_game_of_life_automaton_a10c2c84bfceec5d67149d9b51849c181}} 
+\index{Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}!will\+Die@{will\+Die}}
+\index{will\+Die@{will\+Die}!Game\+Of\+Life\+Automaton@{Game\+Of\+Life\+Automaton}}
+\subsubsection{\texorpdfstring{will\+Die()}{willDie()}}
+{\footnotesize\ttfamily bool Game\+Of\+Life\+Automaton\+::will\+Die (\begin{DoxyParamCaption}\item[{unsigned int}]{line,  }\item[{unsigned int}]{column,  }\item[{\mbox{\hyperlink{class_state}{State}} \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Tests if the value of a cell will become false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The line of the cell to test. \\
+\hline
+{\em column} & The column of the cell to test. \\
+\hline
+{\em s} & The state in which the cell is contained. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cell\textquotesingle{}s value will become false.
+\end{DoxyReturn}
+will\+Die method implementation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{game_of_life_automaton_8h}{game\+Of\+Life\+Automaton.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{game_of_life_automaton_8cpp}{game\+Of\+Life\+Automaton.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{class_window_manager}{}\section{Window\+Manager Class Reference}
+\label{class_window_manager}\index{Window\+Manager@{Window\+Manager}}
+
+
+{\ttfamily \#include $<$windowmanager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_window_manager_a2dabddb740954a724f051bad50a15979}{open\+Window}} (Q\+Widget $\ast$window)
+\item 
+void \mbox{\hyperlink{class_window_manager_a7588564e85fafe1a1203628206f727f3}{close\+Window}} (Q\+Widget $\ast$window)
+\item 
+void \mbox{\hyperlink{class_window_manager_aece6fb478e72bb3c3bf33ffe6fb4ed38}{remove\+Window}} (Q\+Widget $\ast$window)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_window_manager}{Window\+Manager}} \& \mbox{\hyperlink{class_window_manager_a4f5e8cf13cbe4f2d80f3dbcf7f3fb2eb}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_window_manager_a7588564e85fafe1a1203628206f727f3}\label{class_window_manager_a7588564e85fafe1a1203628206f727f3}} 
+\index{Window\+Manager@{Window\+Manager}!close\+Window@{close\+Window}}
+\index{close\+Window@{close\+Window}!Window\+Manager@{Window\+Manager}}
+\subsubsection{\texorpdfstring{close\+Window()}{closeWindow()}}
+{\footnotesize\ttfamily void Window\+Manager\+::close\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{window }\end{DoxyParamCaption})}
+
+Closes the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to close. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_window_manager_a4f5e8cf13cbe4f2d80f3dbcf7f3fb2eb}\label{class_window_manager_a4f5e8cf13cbe4f2d80f3dbcf7f3fb2eb}} 
+\index{Window\+Manager@{Window\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Window\+Manager@{Window\+Manager}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_window_manager}{Window\+Manager}} \& Window\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the only instance of the \mbox{\hyperlink{class_window_manager}{Window\+Manager}} class.
+
+\begin{DoxyReturn}{Returns}
+The single object of \mbox{\hyperlink{class_window_manager}{Window\+Manager}}.
+\end{DoxyReturn}
+get\+Instance method implementation. \mbox{\Hypertarget{class_window_manager_a2dabddb740954a724f051bad50a15979}\label{class_window_manager_a2dabddb740954a724f051bad50a15979}} 
+\index{Window\+Manager@{Window\+Manager}!open\+Window@{open\+Window}}
+\index{open\+Window@{open\+Window}!Window\+Manager@{Window\+Manager}}
+\subsubsection{\texorpdfstring{open\+Window()}{openWindow()}}
+{\footnotesize\ttfamily void Window\+Manager\+::open\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{window }\end{DoxyParamCaption})}
+
+Opens the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to open. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_window_manager_aece6fb478e72bb3c3bf33ffe6fb4ed38}\label{class_window_manager_aece6fb478e72bb3c3bf33ffe6fb4ed38}} 
+\index{Window\+Manager@{Window\+Manager}!remove\+Window@{remove\+Window}}
+\index{remove\+Window@{remove\+Window}!Window\+Manager@{Window\+Manager}}
+\subsubsection{\texorpdfstring{remove\+Window()}{removeWindow()}}
+{\footnotesize\ttfamily void Window\+Manager\+::remove\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{window }\end{DoxyParamCaption})}
+
+Removes the given window from windows and deletes the singleton if windows becomes empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to remove. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{windowmanager_8h}{windowmanager.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{windowmanager_8cpp}{windowmanager.\+cpp}}\end{DoxyCompactItemize}

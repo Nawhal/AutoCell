@@ -1,0 +1,42 @@
+\hypertarget{automaton_8h}{}\section{Code/\+Auto\+Cell/automaton.h File Reference}
+\label{automaton_8h}\index{Code/\+Auto\+Cell/automaton.\+h@{Code/\+Auto\+Cell/automaton.\+h}}
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_automaton_exception}{Automaton\+Exception}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_automaton_exception}{Automaton\+Exception}} class treats the exceptions for the \mbox{\hyperlink{class_automaton}{Automaton}} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_automaton}{Automaton}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_automaton}{Automaton}} class holds the information of how to treat the current state to arrive at the next state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{automaton_8h_a8ca4124a4e899d42539bf86e977b09a0}{operator$<$$<$}} (std\+::ostream \&o, const \mbox{\hyperlink{class_automaton}{Automaton}} \&a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Auto\+Cell
+
+The \mbox{\hyperlink{class_automaton}{Automaton}} determines how to update the state. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{automaton_8h_a8ca4124a4e899d42539bf86e977b09a0}\label{automaton_8h_a8ca4124a4e899d42539bf86e977b09a0}} 
+\index{automaton.\+h@{automaton.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!automaton.\+h@{automaton.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{o,  }\item[{const \mbox{\hyperlink{class_automaton}{Automaton}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator overload.
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & The out stream to write to. \\
+\hline
+{\em s} & The automaton to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The out stream with the automaton written to. 
+\end{DoxyReturn}

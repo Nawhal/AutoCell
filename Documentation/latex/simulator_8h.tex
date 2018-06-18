@@ -1,0 +1,76 @@
+\hypertarget{simulator_8h}{}\section{Code/\+Auto\+Cell/simulator.h File Reference}
+\label{simulator_8h}\index{Code/\+Auto\+Cell/simulator.\+h@{Code/\+Auto\+Cell/simulator.\+h}}
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}automaton.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Thread$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_simulator}{Simulator}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_simulator}{Simulator}} class holds everything necessary to simulate an automaton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{simulator_8h_ae888d76ec9e058aa47eeaaa7917a470d}{S\+T\+O\+P\+P\+ED}}~0
+\item 
+\#define \mbox{\hyperlink{simulator_8h_a6fb7181d994ee98e735494be55809708}{R\+U\+N\+N\+I\+NG}}~1
+\item 
+\#define \mbox{\hyperlink{simulator_8h_a45d86daf08b6f1cb6738d1e93fe94f23}{S\+T\+E\+P\+R\+U\+N\+N\+I\+NG}}~2
+\item 
+\#define \mbox{\hyperlink{simulator_8h_a734b46dfd78fbf6fc938a6f9115f2cc7}{P\+A\+U\+S\+ED}}~3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{simulator_8h_ab8567a4cab5ed2b150735a09eab27909}{delay}} (int milliseconds\+To\+Wait)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Auto\+Cell
+
+Class responsible for the simulation methods.
+
+The \mbox{\hyperlink{class_simulator}{Simulator}} class implements the methods to simulate and display the different automatons. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{simulator_8h_a734b46dfd78fbf6fc938a6f9115f2cc7}\label{simulator_8h_a734b46dfd78fbf6fc938a6f9115f2cc7}} 
+\index{simulator.\+h@{simulator.\+h}!P\+A\+U\+S\+ED@{P\+A\+U\+S\+ED}}
+\index{P\+A\+U\+S\+ED@{P\+A\+U\+S\+ED}!simulator.\+h@{simulator.\+h}}
+\subsubsection{\texorpdfstring{P\+A\+U\+S\+ED}{PAUSED}}
+{\footnotesize\ttfamily \#define P\+A\+U\+S\+ED~3}
+
+\mbox{\Hypertarget{simulator_8h_a6fb7181d994ee98e735494be55809708}\label{simulator_8h_a6fb7181d994ee98e735494be55809708}} 
+\index{simulator.\+h@{simulator.\+h}!R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}}
+\index{R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}!simulator.\+h@{simulator.\+h}}
+\subsubsection{\texorpdfstring{R\+U\+N\+N\+I\+NG}{RUNNING}}
+{\footnotesize\ttfamily \#define R\+U\+N\+N\+I\+NG~1}
+
+\mbox{\Hypertarget{simulator_8h_a45d86daf08b6f1cb6738d1e93fe94f23}\label{simulator_8h_a45d86daf08b6f1cb6738d1e93fe94f23}} 
+\index{simulator.\+h@{simulator.\+h}!S\+T\+E\+P\+R\+U\+N\+N\+I\+NG@{S\+T\+E\+P\+R\+U\+N\+N\+I\+NG}}
+\index{S\+T\+E\+P\+R\+U\+N\+N\+I\+NG@{S\+T\+E\+P\+R\+U\+N\+N\+I\+NG}!simulator.\+h@{simulator.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+R\+U\+N\+N\+I\+NG}{STEPRUNNING}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+R\+U\+N\+N\+I\+NG~2}
+
+\mbox{\Hypertarget{simulator_8h_ae888d76ec9e058aa47eeaaa7917a470d}\label{simulator_8h_ae888d76ec9e058aa47eeaaa7917a470d}} 
+\index{simulator.\+h@{simulator.\+h}!S\+T\+O\+P\+P\+ED@{S\+T\+O\+P\+P\+ED}}
+\index{S\+T\+O\+P\+P\+ED@{S\+T\+O\+P\+P\+ED}!simulator.\+h@{simulator.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+P\+ED}{STOPPED}}
+{\footnotesize\ttfamily \#define S\+T\+O\+P\+P\+ED~0}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{simulator_8h_ab8567a4cab5ed2b150735a09eab27909}\label{simulator_8h_ab8567a4cab5ed2b150735a09eab27909}} 
+\index{simulator.\+h@{simulator.\+h}!delay@{delay}}
+\index{delay@{delay}!simulator.\+h@{simulator.\+h}}
+\subsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{int}]{milliseconds\+To\+Wait }\end{DoxyParamCaption})}
+
+Function that produces a delay on the running of the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em milliseconds\+To\+Wait} & The time in milliseconds to wait. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,120 @@
+\hypertarget{class_state_1_1_iterator}{}\section{State\+:\+:Iterator Class Reference}
+\label{class_state_1_1_iterator}\index{State\+::\+Iterator@{State\+::\+Iterator}}
+
+
+The \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} for the \mbox{\hyperlink{class_state}{State}} class.  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_1_1_iterator_a54547209d50ec7db6bc7303c338573e3}{Iterator}} ()
+\item 
+const bool \mbox{\hyperlink{class_state_1_1_iterator_ac3ce2db518495ab2cb563bfba62a79c1}{operator$\ast$}} () const
+\item 
+unsigned int \mbox{\hyperlink{class_state_1_1_iterator_a48187cf44203889ba25ea78eee4de895}{get\+Current\+Line}} ()
+\item 
+unsigned int \mbox{\hyperlink{class_state_1_1_iterator_a9cbebe63fd8659b3330c68c9be7b7278}{get\+Current\+Column}} ()
+\item 
+\mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} \& \mbox{\hyperlink{class_state_1_1_iterator_a0e1e8b3a2b802a43f5436eccfb15b9a7}{operator++}} ()
+\item 
+bool \mbox{\hyperlink{class_state_1_1_iterator_a31bf32bb11ba3294a3bc79ff27788998}{operator!=}} (\mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} it) const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_state_1_1_iterator_a7edbf9e31116a21e4e18cd2dd004ae63}{State}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}} for the \mbox{\hyperlink{class_state}{State}} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_state_1_1_iterator_a54547209d50ec7db6bc7303c338573e3}\label{class_state_1_1_iterator_a54547209d50ec7db6bc7303c338573e3}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily State\+::\+Iterator\+::\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor that sets the iterator to the first line and column. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_state_1_1_iterator_a9cbebe63fd8659b3330c68c9be7b7278}\label{class_state_1_1_iterator_a9cbebe63fd8659b3330c68c9be7b7278}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!get\+Current\+Column@{get\+Current\+Column}}
+\index{get\+Current\+Column@{get\+Current\+Column}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{get\+Current\+Column()}{getCurrentColumn()}}
+{\footnotesize\ttfamily unsigned int State\+::\+Iterator\+::get\+Current\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the current column of the iterator.
+
+\begin{DoxyReturn}{Returns}
+The current column. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_1_1_iterator_a48187cf44203889ba25ea78eee4de895}\label{class_state_1_1_iterator_a48187cf44203889ba25ea78eee4de895}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!get\+Current\+Line@{get\+Current\+Line}}
+\index{get\+Current\+Line@{get\+Current\+Line}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{get\+Current\+Line()}{getCurrentLine()}}
+{\footnotesize\ttfamily unsigned int State\+::\+Iterator\+::get\+Current\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the current line of the iterator.
+
+\begin{DoxyReturn}{Returns}
+The current line. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_1_1_iterator_a31bf32bb11ba3294a3bc79ff27788998}\label{class_state_1_1_iterator_a31bf32bb11ba3294a3bc79ff27788998}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool State\+::\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state_1_1_iterator}{Iterator}}}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Inequality operator overload.
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & The iterator to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the iterators are different. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_1_1_iterator_ac3ce2db518495ab2cb563bfba62a79c1}\label{class_state_1_1_iterator_ac3ce2db518495ab2cb563bfba62a79c1}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily const bool State\+::\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indirection operator overload.
+
+\begin{DoxyReturn}{Returns}
+The value of the cell. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_state_1_1_iterator_a0e1e8b3a2b802a43f5436eccfb15b9a7}\label{class_state_1_1_iterator_a0e1e8b3a2b802a43f5436eccfb15b9a7}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_state_1_1_iterator}{Iterator}}\& State\+::\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Increment operator overload.
+
+\begin{DoxyReturn}{Returns}
+A reference to the iterator. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_state_1_1_iterator_a7edbf9e31116a21e4e18cd2dd004ae63}\label{class_state_1_1_iterator_a7edbf9e31116a21e4e18cd2dd004ae63}} 
+\index{State\+::\+Iterator@{State\+::\+Iterator}!State@{State}}
+\index{State@{State}!State\+::\+Iterator@{State\+::\+Iterator}}
+\subsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_state}{State}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{state_8h}{state.\+h}}\end{DoxyCompactItemize}

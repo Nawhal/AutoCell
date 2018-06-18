@@ -1,0 +1,205 @@
+\hypertarget{class_elementary_automaton}{}\section{Elementary\+Automaton Class Reference}
+\label{class_elementary_automaton}\index{Elementary\+Automaton@{Elementary\+Automaton}}
+
+
+The \mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} class holds the information of how to treat the current state to arrive at the next state of the elementary case.  
+
+
+
+
+{\ttfamily \#include $<$elementary\+Automaton.\+h$>$}
+
+Inheritance diagram for Elementary\+Automaton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_elementary_automaton}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_elementary_automaton_a9593b026bdc4340f9263f73e0732617a}{Elementary\+Automaton}} (unsigned int ruleN)
+\item 
+\mbox{\hyperlink{class_elementary_automaton_a30ef73987f7375a4421c1751872e2034}{Elementary\+Automaton}} (const \mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} \&e)
+\item 
+\mbox{\hyperlink{class_elementary_automaton_a95bcbaa9024f2fdfd0c2196656d78a98}{$\sim$\+Elementary\+Automaton}} ()
+\item 
+virtual void \mbox{\hyperlink{class_elementary_automaton_a338559546b22deef0f3eb3c0d7d20882}{apply\+Transition}} (\mbox{\hyperlink{class_state}{State}} \&current\+State) const
+\item 
+unsigned int \mbox{\hyperlink{class_elementary_automaton_a38f3a217931e1ccf52fcdbad01d7ff55}{get\+Rule\+Number}} () const
+\item 
+const bool $\ast$ \mbox{\hyperlink{class_elementary_automaton_a585b7a59111245096079cf52bd4dbe96}{get\+Rule\+Tab}} () const
+\item 
+void \mbox{\hyperlink{class_elementary_automaton_a211959d8ca064251019c2f6c3ad2840a}{set\+Rule}} (int ruleN)
+\item 
+virtual void \mbox{\hyperlink{class_elementary_automaton_ab52f80f6998fd5324da2268d846b45cb}{print}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em print \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_elementary_automaton_ac4bf850dc1c0e704f91f035cfbac48a7}{life\+Expectancy}} (bool left, bool mid, bool right)
+\item 
+static unsigned int \mbox{\hyperlink{class_elementary_automaton_adb3f06c908a1550bd236fffe997b0180}{get\+State\+Max\+Nb\+Line}} ()
+\item 
+static unsigned int \mbox{\hyperlink{class_elementary_automaton_abbe236c9f41be00593ae8f4142f353df}{get\+State\+Max\+Nb\+Column}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} class holds the information of how to treat the current state to arrive at the next state of the elementary case. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_elementary_automaton_a9593b026bdc4340f9263f73e0732617a}\label{class_elementary_automaton_a9593b026bdc4340f9263f73e0732617a}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!Elementary\+Automaton@{Elementary\+Automaton}}
+\index{Elementary\+Automaton@{Elementary\+Automaton}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{Elementary\+Automaton()}{ElementaryAutomaton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Elementary\+Automaton\+::\+Elementary\+Automaton (\begin{DoxyParamCaption}\item[{unsigned int}]{ruleN }\end{DoxyParamCaption})}
+
+Constructor that sets the rule number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ruleN} & The rule number of the automaton.\\
+\hline
+\end{DoxyParams}
+Elementary \mbox{\hyperlink{class_automaton}{Automaton}} implementation Elementary \mbox{\hyperlink{class_automaton}{Automaton}} constructor implementation. \mbox{\Hypertarget{class_elementary_automaton_a30ef73987f7375a4421c1751872e2034}\label{class_elementary_automaton_a30ef73987f7375a4421c1751872e2034}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!Elementary\+Automaton@{Elementary\+Automaton}}
+\index{Elementary\+Automaton@{Elementary\+Automaton}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{Elementary\+Automaton()}{ElementaryAutomaton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Elementary\+Automaton\+::\+Elementary\+Automaton (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_elementary_automaton}{Elementary\+Automaton}} \&}]{e }\end{DoxyParamCaption})}
+
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The elementary automaton to copy.\\
+\hline
+\end{DoxyParams}
+Elementary \mbox{\hyperlink{class_automaton}{Automaton}} copy constructor implementation. \mbox{\Hypertarget{class_elementary_automaton_a95bcbaa9024f2fdfd0c2196656d78a98}\label{class_elementary_automaton_a95bcbaa9024f2fdfd0c2196656d78a98}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!````~Elementary\+Automaton@{$\sim$\+Elementary\+Automaton}}
+\index{````~Elementary\+Automaton@{$\sim$\+Elementary\+Automaton}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{$\sim$\+Elementary\+Automaton()}{~ElementaryAutomaton()}}
+{\footnotesize\ttfamily Elementary\+Automaton\+::$\sim$\+Elementary\+Automaton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_elementary_automaton_a338559546b22deef0f3eb3c0d7d20882}\label{class_elementary_automaton_a338559546b22deef0f3eb3c0d7d20882}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!apply\+Transition@{apply\+Transition}}
+\index{apply\+Transition@{apply\+Transition}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{apply\+Transition()}{applyTransition()}}
+{\footnotesize\ttfamily void Elementary\+Automaton\+::apply\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}} \&}]{current\+State }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update the current state to the next based on the elementary automaton\textquotesingle{}s rules.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+State} & The current state of the elementary automaton.\\
+\hline
+\end{DoxyParams}
+apply\+Transition method implementation. 
+
+Implements \mbox{\hyperlink{class_automaton_aaf6b5ebd7a820867bfaab0f6892cc0b8}{Automaton}}.
+
+\mbox{\Hypertarget{class_elementary_automaton_a38f3a217931e1ccf52fcdbad01d7ff55}\label{class_elementary_automaton_a38f3a217931e1ccf52fcdbad01d7ff55}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!get\+Rule\+Number@{get\+Rule\+Number}}
+\index{get\+Rule\+Number@{get\+Rule\+Number}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{get\+Rule\+Number()}{getRuleNumber()}}
+{\footnotesize\ttfamily unsigned int Elementary\+Automaton\+::get\+Rule\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the elementary automaton\textquotesingle{}s rule number as an integer.
+
+\begin{DoxyReturn}{Returns}
+The rule number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_elementary_automaton_a585b7a59111245096079cf52bd4dbe96}\label{class_elementary_automaton_a585b7a59111245096079cf52bd4dbe96}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!get\+Rule\+Tab@{get\+Rule\+Tab}}
+\index{get\+Rule\+Tab@{get\+Rule\+Tab}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{get\+Rule\+Tab()}{getRuleTab()}}
+{\footnotesize\ttfamily const bool$\ast$ Elementary\+Automaton\+::get\+Rule\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the table of the rule (the rule number in binary).
+
+\begin{DoxyReturn}{Returns}
+The rule\textquotesingle{}s table as a vector of booleans. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_elementary_automaton_abbe236c9f41be00593ae8f4142f353df}\label{class_elementary_automaton_abbe236c9f41be00593ae8f4142f353df}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!get\+State\+Max\+Nb\+Column@{get\+State\+Max\+Nb\+Column}}
+\index{get\+State\+Max\+Nb\+Column@{get\+State\+Max\+Nb\+Column}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{get\+State\+Max\+Nb\+Column()}{getStateMaxNbColumn()}}
+{\footnotesize\ttfamily static unsigned int Elementary\+Automaton\+::get\+State\+Max\+Nb\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the maximum number of columns in a state.
+
+\begin{DoxyReturn}{Returns}
+The maximum number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_elementary_automaton_adb3f06c908a1550bd236fffe997b0180}\label{class_elementary_automaton_adb3f06c908a1550bd236fffe997b0180}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!get\+State\+Max\+Nb\+Line@{get\+State\+Max\+Nb\+Line}}
+\index{get\+State\+Max\+Nb\+Line@{get\+State\+Max\+Nb\+Line}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{get\+State\+Max\+Nb\+Line()}{getStateMaxNbLine()}}
+{\footnotesize\ttfamily static unsigned int Elementary\+Automaton\+::get\+State\+Max\+Nb\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the maximum number of lines in a state.
+
+\begin{DoxyReturn}{Returns}
+The maximum number of lines. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_elementary_automaton_ac4bf850dc1c0e704f91f035cfbac48a7}\label{class_elementary_automaton_ac4bf850dc1c0e704f91f035cfbac48a7}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!life\+Expectancy@{life\+Expectancy}}
+\index{life\+Expectancy@{life\+Expectancy}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{life\+Expectancy()}{lifeExpectancy()}}
+{\footnotesize\ttfamily unsigned int Elementary\+Automaton\+::life\+Expectancy (\begin{DoxyParamCaption}\item[{bool}]{left,  }\item[{bool}]{mid,  }\item[{bool}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to calculate the life expectancy of a cell in an elementary automaton.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The cell to the left of the one of interest. \\
+\hline
+{\em mid} & The cell of interest. \\
+\hline
+{\em right} & The cell to the right of the one of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value from 0 to 7 representing the cell\textquotesingle{}s life expectancy.
+\end{DoxyReturn}
+life\+Expectancy method implementation. \mbox{\Hypertarget{class_elementary_automaton_ab52f80f6998fd5324da2268d846b45cb}\label{class_elementary_automaton_ab52f80f6998fd5324da2268d846b45cb}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!print@{print}}
+\index{print@{print}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Elementary\+Automaton\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+print 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & print method implementation. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_automaton_a33107fc96cfe40a75db43b7403dd3194}{Automaton}}.
+
+\mbox{\Hypertarget{class_elementary_automaton_a211959d8ca064251019c2f6c3ad2840a}\label{class_elementary_automaton_a211959d8ca064251019c2f6c3ad2840a}} 
+\index{Elementary\+Automaton@{Elementary\+Automaton}!set\+Rule@{set\+Rule}}
+\index{set\+Rule@{set\+Rule}!Elementary\+Automaton@{Elementary\+Automaton}}
+\subsubsection{\texorpdfstring{set\+Rule()}{setRule()}}
+{\footnotesize\ttfamily void Elementary\+Automaton\+::set\+Rule (\begin{DoxyParamCaption}\item[{int}]{ruleN }\end{DoxyParamCaption})}
+
+Sets the rule number and its corresponding table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ruleN} & The new rule number to be set.\\
+\hline
+\end{DoxyParams}
+set\+Rule method implementation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{elementary_automaton_8h}{elementary\+Automaton.\+h}}\item 
+Code/\+Auto\+Cell/\mbox{\hyperlink{elementary_automaton_8cpp}{elementary\+Automaton.\+cpp}}\end{DoxyCompactItemize}
