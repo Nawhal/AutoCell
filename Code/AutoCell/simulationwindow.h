@@ -33,6 +33,7 @@ class SimulationWindow : public QWidget
         void setupSimulation();
 
     private slots:
+        void returnToMainWindow();
         void playPause ();
         void stepByStep ();
         void stop ();

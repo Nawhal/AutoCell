@@ -1,6 +1,7 @@
 #include "simulationwindow.h"
 #include "ui_simulationwindow.h"
 #include "windowmanager.h"
+#include "mainwindow.h"
 #include "QFileDialog"
 
 SimulationWindow::SimulationWindow(QWidget *parent) :
@@ -94,6 +95,12 @@ void SimulationWindow::setupSimulation()
         }
     }
     simulator->resetState(state);
+}
+
+void SimulationWindow::returnToMainWindow()
+{
+    WindowManager::getInstance().openWindow(new MainWindow());
+    WindowManager::getInstance().closeWindow(this);
 }
 
 void SimulationWindow::setDisplayedAutomatonValues(std::vector< std::vector<bool> > values)

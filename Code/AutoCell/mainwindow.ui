@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>AutoCell</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
