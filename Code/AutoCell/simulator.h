@@ -95,11 +95,4 @@ class Simulator {
         void stop();
 };
 
-/**
- * Function that produces a delay on the running of the program.
- *
- * @param millisecondsToWait The time in milliseconds to wait.
- */
-void delay (int millisecondsToWait);
-
 #endif //_SIMULATOR_H

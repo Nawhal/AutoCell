@@ -39,7 +39,6 @@ void Simulator::pause() {
  */
 void Simulator::stepRun() {
     simState = STEPRUNNING;
-    display();
     applyTransition();
     display();
     simState = PAUSED;

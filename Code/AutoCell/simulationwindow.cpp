@@ -10,6 +10,9 @@ SimulationWindow::SimulationWindow(QWidget *parent) :
     ui(new Ui::SimulationWindow)
 {
     ui->setupUi(this);
+    timer = new QTimer(this);
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(run()));
+    timer->setInterval(1000);
 }
 
 void SimulationWindow::saveAutomaton()
@@ -26,6 +29,7 @@ SimulationWindow::~SimulationWindow()
 {
     delete ui;
     delete simulator;
+    delete timer;
 }
 
 void SimulationWindow::setup(Simulator *sim, unsigned int nbLines, unsigned int nbCol)
@@ -116,12 +120,14 @@ void SimulationWindow::closeEvent(QCloseEvent *event)
 void SimulationWindow::playPause()
 {
     if (simulator->getSimState() == RUNNING) {
+        timer->stop();
         simulator->pause();
     } else {
         if (simulator->getSimState() == STOPPED) {
             setupSimulation();
         }
         simulator->run();
+        timer->start();
     }
 }
 
@@ -135,5 +141,11 @@ void SimulationWindow::stepByStep()
 
 void SimulationWindow::stop()
 {
+    timer->stop();
     simulator->stop();
+}
+
+void SimulationWindow::run()
+{
+    simulator->run();
 }
