@@ -124,7 +124,7 @@
        <number>0</number>
       </property>
       <item row="1" column="0">
-       <widget class="QLabel" name="cellNbLabel">
+       <widget class="QLabel" name="stateNbLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -137,7 +137,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="stateNbLabel">
+       <widget class="QLabel" name="cellNbLabel">
         <property name="font">
          <font>
           <family>Open Sans</family>
@@ -150,7 +150,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="cellNbLineEdit">
+       <widget class="QLineEdit" name="stateNbLineEdit">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -205,7 +205,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="stateNbLineEdit">
+       <widget class="QLineEdit" name="cellNbLineEdit">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>

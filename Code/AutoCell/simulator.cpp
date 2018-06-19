@@ -11,27 +11,18 @@
  */
 
 /**
- * Display method implementation.
- *
- */
-void Simulator::display() {
-
-}
-
-/**
  * Run method implementation.
  *
  */
 void Simulator::run() {
     simState = RUNNING;
+    applyTransition();
     display();
-    delay(delayMilliSeconds);
+}
 
-    while(simState == RUNNING){
-        applyTransition();
-        display();
-        delay(delayMilliSeconds);
-    }
+void Simulator::resetState(State &state)
+{
+    currentState = state;
 }
 
 /**
@@ -54,12 +45,7 @@ void Simulator::stepRun() {
     simState = PAUSED;
 }
 
-void delay(int millisecondsToWait)
+void Simulator::stop()
 {
-    /*QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
-
-    while( QTime::currentTime() < dieTime )
-        QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );*/
-
-    QThread::msleep(millisecondsToWait);
+    simState = STOPPED;
 }

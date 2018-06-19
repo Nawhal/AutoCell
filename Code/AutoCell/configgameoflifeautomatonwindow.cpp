@@ -67,8 +67,18 @@ void ConfigGameOfLifeAutomatonWindow::loadConfig()
 
 void ConfigGameOfLifeAutomatonWindow::launchAutomaton()
 {
+    bool worked;
+    unsigned int columnNb = ui->colNbLineEdit->text().toUInt(&worked);
+    if (!worked) { columnNb = 0; }
+    unsigned int lineNb = ui->lineNbLineEdit->text().toUInt(&worked);
+    if (!worked) { lineNb = 0; }
+    unsigned int minDeath = ui->minDeathLineEdit->text().toUInt(&worked);
+    if (!worked) { minDeath = 0; }
+    unsigned int maxDeath = ui->maxDeathLineEdit->text().toUInt(&worked);
+    if (!worked) { maxDeath = 0; }
+
     SimulationWindow *sw = new SimulationWindow();
-    // TODO setup window
+    sw->setup(new QtSimulator(new GameOfLifeAutomaton(minDeath, maxDeath), State(lineNb, columnNb), sw), lineNb, columnNb);
     WindowManager::getInstance().openWindow(sw);
     WindowManager::getInstance().closeWindow(this);
 }

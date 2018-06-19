@@ -21,13 +21,16 @@
 
 /**
  * @brief The Simulator class holds everything necessary to simulate an automaton.
+ * @abstract
  */
 class Simulator {
     private:
-        Automaton* automaton;
-        unsigned int delayMilliSeconds = 100;
-        State currentState;
         int simState = STOPPED;
+
+    protected:
+        Automaton* automaton;
+        unsigned int delayMilliSeconds = 10000;
+        State currentState;
 
     public:
         /**
@@ -39,18 +42,34 @@ class Simulator {
         Simulator(Automaton* autom, State s) : automaton(autom), currentState(s) { }
 
         /**
+         * Destructor.
+         */
+        virtual ~Simulator() { }
+
+        /**
+         * Returns the value of simState.
+         * @return The value of simState.
+         */
+        int getSimState() { return simState; }
+
+        /**
+         * Sets the current state to the
+         * @param state
+         */
+        virtual void resetState(State& state);
+
+        /**
          * Update current state to the next one.
          *
          */
-        void applyTransition() { automaton->applyTransition(currentState); }
+        virtual void applyTransition() { automaton->applyTransition(currentState); }
 
         /**
          * Display the state at the interface.
          *
          */
-        virtual void display();
+        virtual void display() = 0;
 
-    public slots:
         /**
          * Pause the simulation.
          *
@@ -58,7 +77,7 @@ class Simulator {
         void pause();
 
         /**
-         * Run the simulation in a continuous way.
+         * Run the simulation in a continuous way (needs to be called every x milliseconds).
          *
          */
         void run();
@@ -68,6 +87,12 @@ class Simulator {
          *
          */
         void stepRun();
+
+        /**
+         * Stop the simulation.
+         *
+         */
+        void stop();
 };
 
 /**

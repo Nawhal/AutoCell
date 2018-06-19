@@ -4,6 +4,8 @@
 #include "windowmanager.h"
 #include "mainwindow.h"
 #include "xmlautomatondatamanager.h"
+#include "qtelementarysimulator.h"
+#include "elementaryAutomaton.h"
 
 #include <QFileDialog>
 
@@ -64,8 +66,16 @@ void ConfigElementaryAutomatonWindow::loadConfig()
 
 void ConfigElementaryAutomatonWindow::launchAutomaton()
 {
+    bool worked;
+    unsigned int cellNb = ui->cellNbLineEdit->text().toUInt(&worked);
+    if (!worked) { cellNb = 0; }
+    unsigned int stateNb = ui->stateNbLineEdit->text().toUInt(&worked);
+    if (!worked) { stateNb = 0; }
+    unsigned int ruleNb = ui->ruleLineEdit->text().toUInt(&worked);
+    if (!worked) { ruleNb = 0; }
+
     SimulationWindow *sw = new SimulationWindow();
-    // TODO setup window
+    sw->setup(new QtElementarySimulator(new ElementaryAutomaton(ruleNb), State(1, cellNb), stateNb, sw), stateNb, cellNb);
     WindowManager::getInstance().openWindow(sw);
     WindowManager::getInstance().closeWindow(this);
 }

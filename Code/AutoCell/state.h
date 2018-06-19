@@ -41,8 +41,8 @@ class StateException {
  */
 class State {
     private:
-        const unsigned int nbLine;
-        const unsigned int nbColumn;
+        unsigned int nbLine;
+        unsigned int nbColumn;
         Cell** cells;
 
     public:
@@ -52,7 +52,7 @@ class State {
          * @param col Number of columns of a state.
          * @param lin Number of lines of a state.
          */
-        State (const unsigned int lin, const unsigned int col);
+        State (unsigned int lin, unsigned int col);
 
         /**
          * Copy constructor.
@@ -60,6 +60,13 @@ class State {
          * @param st The state to copy.
          */
         State (const State& st);
+
+        /**
+         * Equal operator.
+         * @param s The state to be assigned
+         * @return The new State
+         */
+        State& operator =(const State &st);
 
         /**
          * Destructor.
@@ -130,70 +137,71 @@ class State {
          * @brief The Iterator for the State class.
          */
         class Iterator{
-            friend class State;
+            private:
+                friend class State;
 
-            const State* state;
-            unsigned int currentLine;
-            unsigned int currentColumn;
+                const State* state;
+                unsigned int currentLine;
+                unsigned int currentColumn;
 
-            /**
-             * Iterator's constructor to a specific position of a State class.
-             *
-             * @param s The state on which to iterate.
-             * @param l The line to begin iterating.
-             * @param c The column to begin iterating.
-             */
-            Iterator(const State* s,unsigned int l,unsigned c):state(s),currentLine(l),currentColumn(c){}
+                /**
+                 * Iterator's constructor to a specific position of a State class.
+                 *
+                 * @param s The state on which to iterate.
+                 * @param l The line to begin iterating.
+                 * @param c The column to begin iterating.
+                 */
+                Iterator(const State* s,unsigned int l,unsigned c):state(s),currentLine(l),currentColumn(c){}
 
-        public:
-            /**
-             * Default constructor that sets the iterator to the first line and column.
-             *
-             */
-            Iterator():state(0),currentLine(0),currentColumn(0){}
+            public:
+                /**
+                 * Default constructor that sets the iterator to the first line and column.
+                 *
+                 */
+                Iterator():state(0),currentLine(0),currentColumn(0){}
 
-            /**
-             * Indirection operator overload.
-             *
-             * @return The value of the cell.
-             */
-            const bool operator*() const { return state->getCellValue(currentLine,currentColumn); }
+                /**
+                 * Indirection operator overload.
+                 *
+                 * @return The value of the cell.
+                 */
+                const bool operator*() const { return state->getCellValue(currentLine,currentColumn); }
 
-            /**
-             * Get the current line of the iterator.
-             *
-             * @return The current line.
-             */
-            unsigned int getCurrentLine(){return this->currentLine;}
+                /**
+                 * Get the current line of the iterator.
+                 *
+                 * @return The current line.
+                 */
+                unsigned int getCurrentLine(){return this->currentLine;}
 
-            /**
-             * Get the current column of the iterator.
-             *
-             * @return The current column.
-             */
-            unsigned int getCurrentColumn(){return this->currentColumn;}
+                /**
+                 * Get the current column of the iterator.
+                 *
+                 * @return The current column.
+                 */
+                unsigned int getCurrentColumn(){return this->currentColumn;}
 
-            /**
-             * Increment operator overload.
-             *
-             * @return A reference to the iterator.
-             */
-            Iterator& operator++() {
-                currentColumn++;
-                if(currentColumn==state->getNbColumn()){
-                    currentColumn=0;
-                    currentLine++;
+                /**
+                 * Increment operator overload.
+                 *
+                 * @return A reference to the iterator.
+                 */
+                Iterator& operator++() {
+                    currentColumn++;
+                    if (currentColumn == state->getNbColumn() && currentLine < (state->getNbLine()-1)){
+                        currentColumn = 0;
+                        currentLine++;
+                    }
+                    return *this;
                 }
-                return *this;
-            }
 
-            /**
-             * Inequality operator overload.
-             *
-             * @param it The iterator to compare to.
-             * @return True if the iterators are different.
-             */
-            bool operator!=(Iterator it) const { return currentLine!=it.getCurrentLine() || currentColumn!=it.getCurrentColumn(); }
+                /**
+                 * Inequality operator overload.
+                 *
+                 * @param it The iterator to compare to.
+                 * @return True if the iterators are different.
+                 */
+                bool operator!=(Iterator it) const { return currentLine!=it.getCurrentLine() || currentColumn!=it.getCurrentColumn(); }
 
         };
 
@@ -202,7 +210,7 @@ class State {
          *
          * @return An iterator to the fisrt position.
          */
-        Iterator begin() const { return Iterator(this,0,0); }
+        Iterator begin() const { return Iterator(this, 0, 0); }
 
         //column gets restarted when at tab[size] not line
         /**
@@ -210,7 +218,7 @@ class State {
          *
          * @return An iterator to the last position.
          */
-        Iterator end() const { return Iterator(this,nbLine,nbColumn-1); }
+        Iterator end() const { return Iterator(this, nbLine-1, nbColumn); }
 
         /**
          * Assignment operator overload.

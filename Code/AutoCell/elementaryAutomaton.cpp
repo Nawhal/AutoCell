@@ -71,7 +71,6 @@ void ElementaryAutomaton::applyTransition(State& currentState) const
         bool right = base->getCellValue(ElementaryAutomaton::stateWorkingLine,i+1);
         currentState.changeCell(ElementaryAutomaton::stateWorkingLine,i,Cell(ruleTab[lifeExpectancy(left,mid,right)]));
     }
-
 }
 
 /**

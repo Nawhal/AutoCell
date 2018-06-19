@@ -39,6 +39,24 @@ State::State (const State& st) : nbColumn(st.nbColumn), nbLine(st.nbLine) {
     }
 }
 
+State &State::operator =(const State &st)
+{
+    nbColumn = st.nbColumn;
+    nbLine = st.nbLine;
+    //create same size state
+    cells = new Cell*[st.nbLine];
+    for (unsigned int i = 0; i < st.nbLine; ++i) {
+        cells[i] = new Cell[st.nbColumn];
+    }
+    // copy st into this
+    for (unsigned int i = 0; i < st.nbLine; ++i) {
+        for(unsigned int j = 0; j < st.nbColumn; ++j) {
+            cells[i][j] = st.cells[i][j];
+        }
+    }
+    return *this;
+}
+
 /**
  * getNbOfLivingNeighbors method implementation.
  *

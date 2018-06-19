@@ -41,7 +41,9 @@ SOURCES += \
     configgameoflifeautomatonwindow.cpp \
     mainwindow.cpp \
     simulationwindow.cpp \
-    windowmanager.cpp
+    windowmanager.cpp \
+    qtsimulator.cpp \
+    qtelementarysimulator.cpp
 
 HEADERS += \
     cell.h \
@@ -58,7 +60,9 @@ HEADERS += \
     configgameoflifeautomatonwindow.h \
     mainwindow.h \
     simulationwindow.h \
-    windowmanager.h
+    windowmanager.h \
+    qtsimulator.h \
+    qtelementarysimulator.h
 
 FORMS += \
     configdayandnightautomatonwindow.ui \

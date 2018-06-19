@@ -4,6 +4,8 @@
 #include "simulationwindow.h"
 #include "windowmanager.h"
 #include "xmlautomatondatamanager.h"
+#include "dayAndNightAutomaton.h"
+#include "qtsimulator.h"
 
 #include <QFileDialog>
 #include <string>
@@ -61,8 +63,14 @@ void ConfigDayAndNightAutomatonWindow::loadConfig()
 
 void ConfigDayAndNightAutomatonWindow::launchAutomaton()
 {
+    bool worked;
+    unsigned int columnNb = ui->colNbLineEdit->text().toUInt(&worked);
+    if (!worked) { columnNb = 0; }
+    unsigned int lineNb = ui->lineNbLineEdit->text().toUInt(&worked);
+    if (!worked) { lineNb = 0; }
+
     SimulationWindow *sw = new SimulationWindow();
-    // TODO setup window
+    sw->setup(new QtSimulator(new DayAndNightAutomaton(), State(lineNb, columnNb), sw), lineNb, columnNb);
     WindowManager::getInstance().openWindow(sw);
     WindowManager::getInstance().closeWindow(this);
 }
