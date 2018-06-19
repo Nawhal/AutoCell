@@ -1,9 +1,7 @@
 #include "simulationwindow.h"
 #include "ui_simulationwindow.h"
 #include "windowmanager.h"
-
-#include <string>
-#include <cxxabi.h>
+#include "QFileDialog"
 
 SimulationWindow::SimulationWindow(QWidget *parent) :
     QWidget(parent),
@@ -17,12 +15,38 @@ SimulationWindow::SimulationWindow(QWidget *parent) :
 
 void SimulationWindow::saveAutomaton()
 {
-    // TODO
+    QString completePath = QFileDialog::getSaveFileName(this,
+        "Sauvegarder l'automate", "",
+         "eXtensible Markup Language Files (*.xml);;All Files (*)");
+    if (completePath.isEmpty()) { return; }
+    try {
+        unsigned int index = completePath.lastIndexOf("/");
+        QString dirPath = completePath.left(index);
+        QString fileName = completePath.right(completePath.length() - index - 1);
+        simulator->saveAutomaton(dirPath, fileName);
+    } catch (std::exception e) { }
 }
 
 void SimulationWindow::loadAutomaton()
 {
-    // TODO
+    QString completePath = QFileDialog::getOpenFileName(this,
+        "Charger l'automate", "",
+        "eXtensible Markup Language Files (*.xml);;All Files (*)");
+    if (completePath.isEmpty()) { return; }
+    try {
+        unsigned int index = completePath.lastIndexOf("/");
+        QString dirPath = completePath.left(index);
+        QString fileName = completePath.right(completePath.length() - index - 1);
+        simulator->loadAutomaton(dirPath, fileName);
+    } catch (std::exception e) { }
+}
+
+void SimulationWindow::updateSpeed()
+{
+    bool worked;
+    unsigned int speed = ui->speedLineEdit->text().toUInt(&worked);
+    if (!worked) { return; }
+    timer->setInterval(speed);
 }
 
 SimulationWindow::~SimulationWindow()
@@ -94,8 +118,7 @@ void SimulationWindow::setDisplayedAutomatonValues(std::vector< std::vector<bool
 void SimulationWindow::cellActivation(const QModelIndex &index)
 {
     if (simulator->getSimState() != STOPPED) { return; }
-    if (strcmp(abi::__cxa_demangle(typeid(*simulator).name(), 0, 0, 0), "QtElementarySimulator") == 0
-            && index.row() >= 1) { return; }
+    if (isOfType(*simulator, "QtElementarySimulator") && index.row() >= 1) { return; }
 
     QTableWidgetItem* cell = ui->tableWidget->item(index.row(), index.column());
     if (cell->text() == "") {

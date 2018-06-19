@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Simulation d'automate</string>
   </property>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
@@ -185,6 +185,9 @@
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
         </property>
+        <property name="text">
+         <string>1000</string>
+        </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
@@ -192,6 +195,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="saveButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -213,10 +219,16 @@
         <property name="text">
          <string>Sauvegarder</string>
         </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="loadButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -237,6 +249,9 @@
         </property>
         <property name="text">
          <string>Charger</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -372,6 +387,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>speedLineEdit</sender>
+   <signal>editingFinished()</signal>
+   <receiver>SimulationWindow</receiver>
+   <slot>updateSpeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>saveAutomaton()</slot>
@@ -379,5 +410,6 @@
   <slot>playPause()</slot>
   <slot>stepByStep()</slot>
   <slot>stop()</slot>
+  <slot>updateSpeed()</slot>
  </slots>
 </ui>

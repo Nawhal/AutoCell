@@ -13,11 +13,13 @@
 #include "state.h"
 #include "automaton.h"
 
+#include <cxxabi.h>
+#include <QString>
+
 #define STOPPED 0
 #define RUNNING 1
 #define STEPRUNNING 2
 #define PAUSED 3
-#include <QThread>
 
 /**
  * @brief The Simulator class holds everything necessary to simulate an automaton.
@@ -26,6 +28,12 @@
 class Simulator {
     private:
         int simState = STOPPED;
+
+        /**
+         * Returns the type of the automaton.
+         * @return The type of the automaton.
+         */
+        std::string typeOfAutomaton () { return abi::__cxa_demangle(typeid(*automaton).name(), 0, 0, 0); }
 
     protected:
         Automaton* automaton;
@@ -93,6 +101,20 @@ class Simulator {
          *
          */
         void stop();
+
+        /**
+         * Saves the automaton to the given file path.
+         * @param path
+         * @param fileName
+         */
+        void saveAutomaton(QString path, QString fileName);
+
+        /**
+         * Loads the automaton from the given file path.
+         * @param path
+         * @param fileName
+         */
+        void loadAutomaton(QString path, QString fileName);
 };
 
 #endif //_SIMULATOR_H

@@ -5,6 +5,8 @@
 #include <qtsimulator.h>
 #include <vector>
 #include <qtimer>
+#include <string>
+#include <cxxabi.h>
 
 namespace Ui {
     class SimulationWindow;
@@ -37,7 +39,13 @@ class SimulationWindow : public QWidget
         void run();
         void saveAutomaton ();
         void loadAutomaton ();
+        void updateSpeed ();
         void cellActivation(const QModelIndex &index);
 };
+
+template <typename T>
+bool isOfType(const T &value, const char* typeName) {
+    return strcmp(abi::__cxa_demangle(typeid(value).name(), 0, 0, 0), typeName) == 0;
+}
 
 #endif // SIMULATIONWINDOW_H
